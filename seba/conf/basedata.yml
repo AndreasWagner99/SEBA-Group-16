@@ -1,0 +1,24 @@
+Designer(Bob):
+    firstName: Bob
+    lastName: Meyers
+    city: Nürnberg
+    zip: 99999
+    street: teststrasse 9
+
+Company(IBM):
+    fullname: IBM
+    city: Seattle
+    zip: 88888
+    street: ibm-street 1
+
+Project(MegaProject):
+    title: MegaProject
+    teaser: Really fancy
+    description: A really fancy project where you can earn lots of money!
+    owner: IBM
+
+Project(SuperProject):
+    title: Super duper Project
+    teaser: A project which will change the world!
+    description: Build a user interface for a iron-man like super-suit.
+    owner: IBM

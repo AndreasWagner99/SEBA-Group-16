@@ -1,0 +1,14 @@
+<h1>
+	${_project.title}
+</h1>
+#{if _mode == 'preview'}
+	<div>
+		${_project.teaser}
+	</div>
+#{/if}
+
+#{if _mode == 'full'}
+	<div>
+		${_project.description}
+	</div>
+#{/if}

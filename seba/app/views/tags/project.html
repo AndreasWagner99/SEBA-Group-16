@@ -2,9 +2,12 @@
 	${_project.title}
 </h1>
 #{if _mode == 'preview'}
-	<div>
+	<p>
 		${_project.teaser}
-	</div>
+	</p>
+	<p>
+		<a href="#project${_project.id}" role="button" class="btn" data-toggle="modal">Details</a>
+	</p>
 #{/if}
 
 #{if _mode == 'full'}
@@ -12,3 +15,19 @@
 		${_project.description}
 	</div>
 #{/if}
+
+<!-- Modal Dialog for the project -->
+<div id="project${_project.id}" class="modal hide fade">
+  <div class="modal-header">
+    <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3>${_project.title}</h3>
+  </div>
+  <div class="modal-body">
+    <p>${_project.teaser}</p>
+    <p>${_project.description}</p>
+  </div>
+  <div class="modal-footer">
+    <a href="#" class="btn">Close</a>
+    <a href="#" class="btn btn-primary">Apply</a>
+  </div>
+</div>

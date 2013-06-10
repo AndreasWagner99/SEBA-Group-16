@@ -1,6 +1,9 @@
 package models;
 
+import javax.annotation.Generated;
 import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.persistence.Lob;
 import javax.persistence.ManyToOne;
 
@@ -12,7 +15,7 @@ import play.db.jpa.Model;
  */
 @Entity
 public class Project extends Model{
-
+	
 	public String	title;
 	public String	teaser;
 	@Lob

@@ -2,13 +2,15 @@
 #{set title:'Available Projects' /}
 
 #{if projects}
+	<div class="row">
 	#{list items:projects, as:'projectItem'}
-		#{project project:projectItem, mode:'preview'/}
+		<div class="span12">#{project project:projectItem, mode:'preview'/}</div>
 	#{/list}
+	</div>
 #{/if}
 
 #{else}
-	<div class="empty">
+	<div class="empty row">
 		No projects listed yet.
 	</div>
 #{/else}

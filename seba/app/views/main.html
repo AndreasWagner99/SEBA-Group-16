@@ -4,103 +4,49 @@
 <head>
 <title>#{get 'title' /}</title>
 <meta charset="${_response_encoding}">
-	#{set 'moreStyles'} 
-		#{stylesheet 'main.css'/} 
-		#{stylesheet 'reset.css'/} 
-		<!-- #{stylesheet 'stimenu.css'/} --> 
-		#{stylesheet 'style.css'/}
-		#{stylesheet 'bootstrap.css'/}  
-	#{/set} 
-	#{get 'moreStyles' /}
-
-	#{set 'moreScripts'} 
-		#{script 'jquery-1.6.4.min.js'/} 
-		#{script 'jquery-ui.min.js'/}
-		#{script 'jquery.easing.1.3.js'/}
-		#{script 'jquery.iconmenu.js'/}
-		#{script 'jquery.megamenu.js'/}
-		#{script 'bootstrap.js'/} 
-	#{/set} 
-	#{get 'moreScripts' /}
-
-	<script type="text/javascript">
-		$(function() {
-			$('#sti-menu').iconmenu();
-		});
-	</script>
-
-	<script type="text/javascript">
-		jQuery(function(){
-			var SelfLocation = window.location.href.split('?');
-			switch (SelfLocation[1]) {
-			  case "justify_left":
-				jQuery(".megamenu").megamenu({ 'justify':'left' });
-				break;
-			  case "justify_right":
-			  default:
-				jQuery(".megamenu").megamenu({ 'justify':'right' });
-			}
-		});
-    </script>
+   #{set 'moreStyles'}
+	<!-- #{stylesheet 'main.css'/} -->
+	<!-- "#{stylesheet 'reset.css'/} -->
+   <!-- #{stylesheet 'stimenu.css'/} -->
+      #{stylesheet 'style.css'/} 
+      #{stylesheet 'bootstrap.css'/} 
+   #{/set} 
+   #{get 'moreStyles' /} 
+   
+   #{set 'moreScripts'} 
+      #{script 'jquery.min.js'/} 
+      #{script 'jquery-ui.min.js'/} 
+      #{script 'jquery.easing.1.3.js'/} 
+      #{script 'jquery.iconmenu.js'/} 
+      #{script 'bootstrap.min.js'/} 
+   #{/set} 
+   #{get 'moreScripts' /}
 </head>
 <body>
-<div class="container">
-	<div id="inner">
-		<div id="wrapper">
-			<div id="uppernav">
+	<div class="container">
+		<div class="navbar">
+			<!-- CategoryMenu -->
+			<ul class="nav nav-pills pull-left">
+				<li><a href="#">I am a <strong>Company</strong></a></li>
+				<li class="active"><a href="#">I am a <strong>Designer</strong></a></li>
+			</ul>
 
-				<div style="float: left;">
+			<!-- MainMenu -->
+			<ul class="nav nav-pills pull-right">
+				<li><a href="@{Application.index()}">Home</a></li>
+				<li><a href="@{Projects.list()}">Projects</a></li>
+				<li><a href="#">My Profile</a></li>
+				<li><a href="#">Applications</a></li>
+				<li><a href="#">Sign in</a></li>
+			</ul>
+		</div>
 
-					<ul class="megamenu">
+		#{doLayout /}
 
-						<li><a href="#">I am a <strong>COMPANY</strong></a></li>
-						<li id="current"><a href="#">I am a <strong>Designer</strong></a>
-						</li>
-					</ul>
-
-				</div>
-
-
+		<div class="row" id="uppernav" style="background: #61594e;">
+			<div class="span12">
 				<!--MegaMenu Starts-->
 				<ul class="megamenu">
-
-					<li id="signin"><a href="#">SIGN-IN</a>
-						<div
-							style="width: 265px; padding: 10px; background-color: #46cccc;">
-
-							<form action="#" method="get" id="form-content">
-								<fieldset>
-									<legend>Login</legend>
-									<div class="FieldLabel">Login</div>
-									<div class="FieldItem">
-										<input type="text" class="Text" />
-									</div>
-									<div class="FieldLabel">Password</div>
-									<div class="FieldItem">
-										<input type="password" class="Text" />
-									</div>
-									<div class="FieldItem">
-										<input type="button" value="Login" />
-									</div>
-								</fieldset>
-							</form>
-						</div></li>
-					<li><a href="#">APPLICATIONS</a></li>
-					<li><a href="#">MY PROFILE</a></li>
-					<li><a href="@{Projects.list()}">PROJECTS</a></li>
-					<li id="current"><a href="#">HOME</a></li>
-				</ul>
-				<!--MegaMenu Ends-->
-
-			</div>
-
-			#{doLayout /}
-			
-			<div id="uppernav" style="background: #61594e;">
-
-				<!--MegaMenu Starts-->
-				<ul class="megamenu">
-
 					<li><a href="#">CONTACT US</a></li>
 					<li><a href="#">TERMS & CONDITIONS</a></li>
 					<li><a href="#">PRIVACY POLICY</a></li>
@@ -108,16 +54,15 @@
 					<li><a href="#">HOME</a></li>
 				</ul>
 				<!--MegaMenu Ends-->
-
 			</div>
+		</div>
 
-			<div id="footer">
+		<div class="row" id="footer">
+			<div class="span12">
 
 				<strong>LetsCoverYou&reg;</strong> is a product of SEBA Group 16
 				Team | Site powered by <strong>Matthias, Andreas, Anamika
 					and Kenny </strong>
-			</div>
-
 			</div>
 		</div>
 	</div>

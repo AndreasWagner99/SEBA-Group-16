@@ -1,16 +1,16 @@
 #{extends 'main.html' /}
 #{set title:'Available Projects' /}
-
+<div class="row"></div>
 #{if projects}
-	<div class="row">
+	<div class="row content">
 	#{list items:projects, as:'projectItem'}
-		<div class="span12">#{project project:projectItem, mode:'preview'/}</div>
+		#{project project:projectItem, mode:'preview'/}
 	#{/list}
 	</div>
 #{/if}
 
 #{else}
-	<div class="empty row">
+	<div class="row content">
 		No projects listed yet.
 	</div>
 #{/else}

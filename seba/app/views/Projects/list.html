@@ -1,4 +1,22 @@
 #{extends 'main.html' /}
+<script type="text/javascript">
+	$(document).ready(function(){
+	        $('.apply').click(function(){
+	            var projId = $(this).data("project");
+	            $('#applSave').click(function(){
+	                var description = $('#description').val();
+	                var action = #{jsAction @Applications.newApplication(':projId', ':description') /}
+	                $.post(action(), {projId: projId, description: description}, function(data){
+	                    alert("Application saved!");
+	                    $('.modal').modal('hide');
+	                });
+	            });
+	            $('#applicationDialog').modal();
+	            });
+	        }
+	);
+</script>
+
 #{set title:'Available Projects' /}
 <div class="row"></div>
 #{if projects}
@@ -14,3 +32,17 @@
 		No projects listed yet.
 	</div>
 #{/else}
+
+<!-- Modal Dialog for applications -->
+<div id="applicationDialog" class="modal hide fade">
+   <div class="modal-header">
+      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+      <h3>Application</h3>
+   </div>
+   <div class="modal-body">
+      <p><input type="text" id="description"/></p>
+   </div>
+   <div class="modal-footer">
+      <a href="#" class="btn" id="applSave">OK</a>
+   </div>
+</div>

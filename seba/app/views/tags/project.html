@@ -16,7 +16,10 @@
 	      <p>${_project.description}</p>
 	   </div>
 	   <div class="modal-footer">
-	      <a href="#" class="btn">Close</a> <a href="#" data-project="${_project.id}" class="btn btn-primary apply">Apply</a>
+		   <ul class="pager">
+		      <li class="previous"><a href="#">Close</a></li>
+	         <li class="next"><a href="#" data-project="${_project.id}" class="applyButton">Apply</a></li>
+	      </ul>
 	   </div>
 	</div>
 #{/if}

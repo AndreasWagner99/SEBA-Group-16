@@ -18,9 +18,16 @@
       #{script 'jquery-ui.min.js'/} 
       #{script 'jquery.easing.1.3.js'/} 
       #{script 'jquery.iconmenu.js'/} 
-      #{script 'bootstrap.min.js'/} 
+      #{script 'bootstrap.min.js'/}
+      #{script 'applicationHandling.js'/}
    #{/set} 
    #{get 'moreScripts' /}
+   
+   <script>
+    var routes = {
+        applicationAction: #{jsAction @Applications.newApplication() /}
+    } 
+    </script>
 </head>
 <body>
 	<div class="container">

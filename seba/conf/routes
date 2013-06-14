@@ -6,7 +6,10 @@
 GET     /                                       Application.index
 
 #Browse projects
-GET		/projects/list							Projects.list
+GET		/projects/list							      Projects.list
+
+#Applications
+POST     /applications                          Applications.newApplication
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

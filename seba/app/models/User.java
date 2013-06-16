@@ -9,7 +9,7 @@ import play.db.jpa.Model;
  * Base-Entity for a User
  * used to act as the super-class for all roles in the project
  * @Author: Andreas Wagner
- * @Author:Anamika Chowdhury
+ * @Author: Anamika Chowdhury
  */
 @Entity
 public class User extends Model{

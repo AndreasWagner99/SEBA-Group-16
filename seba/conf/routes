@@ -10,6 +10,17 @@ GET		/projects/list							      Projects.list
 
 #Applications
 POST     /applications                          Applications.newApplication
+#Registration of Designer
+GET 	/Registration/designer						Registration.designer
+
+#Registration of Company
+GET 	/Registration/company						Registration.company
+
+# login
+GET     /login.php                              Application.login
+
+# logout
+GET     /logout.php                             Application.logout
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

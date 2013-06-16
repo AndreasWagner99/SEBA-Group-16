@@ -40,11 +40,24 @@
 
 			<!-- MainMenu -->
 			<ul class="nav nav-pills pull-right">
+			<!--Added by Anamika User Session-->
+			 %{
+                    	if(session.get("user") != null)
+   							userexist = true;
+   						else
+   							userexist = false;
+				}%
 				<li><a href="@{Application.index()}">Home</a></li>
 				<li><a href="@{Projects.list()}">Projects</a></li>
 				<li><a href="#">My Profile</a></li>
 				<li><a href="#">Applications</a></li>
-				<li><a href="#">Sign in</a></li>
+				#{if userexist}
+				<li><a href="@{Application.logout()}">Sign Out</a></li>
+				#{/if}
+				#{else }
+				<li><a href="@{Application.login()}">Sign in</a></li>
+				#{/else}
+				<!--Added by Anamika User Session End-->
 			</ul>
 		</div>
 

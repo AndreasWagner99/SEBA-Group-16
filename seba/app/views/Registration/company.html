@@ -1,0 +1,81 @@
+#{extends 'main.html' /}
+#{set title:'SignUp For Company' /}
+
+
+#{form @saveCompany() , id:'loginform'}
+<fieldset>
+	#{field 'company.email'}
+			<div class="${field.errorClass}">
+				<div>
+				<label for="${field.id}">Email</label><br />
+				</div>
+					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${company?.email}"/> 
+					<span class="error">${field.error}</span> <br />
+			</div>
+	#{/field}
+	
+	#{field 'company.companyName'}
+			<div class="${field.errorClass}">
+				<div>
+				<label for="${field.id}">Company Name</label><br />
+				</div>
+					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${company?.companyName}"/>
+					<span class="error">${field.error}</span> <br />
+			</div>
+	#{/field}
+	
+	#{field 'company.street'}
+			<div class="${field.errorClass}">
+				<div>
+				<label for="${field.id}">Street</label><br />
+				</div>
+					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${company?.street}"/>
+					<span class="error">${field.error}</span> <br />
+			</div>
+	#{/field}
+	
+	#{field 'company.city'}
+			<div class="${field.errorClass}">
+				<div>
+					<label for="${field.id}">City</label><br />
+				</div>
+					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${company?.city}"/>
+					<span class="error">${field.error}</span> <br />
+			</div>
+	#{/field}
+	
+	#{field 'company.zip'}
+			<div class="${field.errorClass}">
+				<div>
+					<label for="${field.id}">Zip</label><br />
+				</div>
+					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${company?.zip}"/>
+					<span class="error">${field.error}</span> <br />
+			</div>
+	#{/field}
+	
+	#{field 'company.password'}
+			<div class="${field.errorClass}">
+				<div>
+					<label for="${field.id}">Password</label><br />
+				</div>
+					<input type="password" id="${field.id}" class="text-input" name="${field.name}" value="${company?.password}"/>
+					<span class="error">${field.error}</span> <br />	
+			</div>
+	#{/field}	
+	
+	#{field 'company.verifyPassword'}
+			<div class="${field.errorClass}">
+				<div>
+					<label for="${field.id}">Repeat Password</label><br />
+				</div>
+					<input type="password" id="${field.id}" class="text-input" name="${field.name}" value="${company?.verifyPassword}"/>
+					<span class="error">${field.error}</span> <br />
+			</div>
+	#{/field}	 
+	
+            <input type="button" class="button  but-red" value="Create your account" onclick="submit();"/> 
+     </fieldset>
+  #{/form}
+<br />
+<br />        

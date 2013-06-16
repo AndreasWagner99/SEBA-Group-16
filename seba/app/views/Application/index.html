@@ -1,4 +1,11 @@
-#{extends 'main.html' /} #{set title:'Home' /}
+#{extends 'main.html' /} 
+#{set title:'Home' /}
+<!-- User Session Added By Anamika -->
+%{
+                  	if(session.get("user") != null)
+ 							uname = session.get("user");
+ 					}%
+ <!-- Added By Anamika -->
 <div class="row">
 	<div class="span12">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">

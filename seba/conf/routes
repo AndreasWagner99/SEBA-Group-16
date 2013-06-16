@@ -10,6 +10,7 @@ GET		/projects/list							      Projects.list
 
 #Applications
 POST     /applications                          Applications.newApplication
+
 #Registration of Designer
 GET 	/Registration/designer						Registration.designer
 

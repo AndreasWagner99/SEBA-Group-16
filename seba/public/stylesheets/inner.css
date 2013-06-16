@@ -1,0 +1,51 @@
+/* 
+Registration - CSS File
+*/
+
+#loginform input, #loginform1 input{ border:1px solid #e1e1e1; }
+
+
+#creationForm .text-input{width:50%;}
+#loginform .text-input{
+	 width:80%;
+	 padding-left:0px;
+	 }
+input.button.but-red{background:url(../images/arrow.gif) #e03838 no-repeat right; padding:0px 40px 2px 20px;  font-size:13px;}
+/* CONTACT */
+form{margin:0; padding:0;}
+fieldset{border:0px;}
+#contactform{margin:0 auto; position:relative; }
+#contactform label{display:block}
+span.error{color:red;text-align:left; font-size:14px;}
+#contactform .text-input, #contactform .text-area{
+	margin-bottom:8px;
+	padding:8px 5px;
+	vertical-align:middle;
+	background-color:#f5f5f5!important;
+}
+
+#contactform .text-input{width:50%;}
+#contactform .text-area{width:80%;}
+#message{ margin-left:0px;}
+#message h2	{}
+#message p{margin:6px 0px; }
+
+#contactform input.button{
+	border:0px;
+	text-align:center;
+	padding:0px 14px;
+	color:#fff !important;
+	cursor:pointer;
+	font-size:11px;
+	display:inline-block;
+	height:26px;
+	line-height:25px;
+	background:#e03838;
+}
+
+#guestname{
+	font-size:10px;
+	padding:inherit;
+	font-style:italic;
+	color:#330000;
+}

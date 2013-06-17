@@ -10,7 +10,7 @@ $(document).ready(function(){
             var formData = new FormData();
             formData.append("description", description);
             formData.append("projId", projId);
-            formData.append("file", form[0][0].files[0]);
+            formData.append("file", form[0][1].files[0]);
             
             $.ajax({
                 type: "POST",

@@ -3,7 +3,6 @@
 <html>
 <head>
 <title>#{get 'title' /}</title>
-<meta charset="${_response_encoding}">
    #{set 'moreStyles'}
 	<!-- #{stylesheet 'main.css'/} -->
 	<!-- "#{stylesheet 'reset.css'/} -->
@@ -27,6 +26,31 @@
     var routes = {
         applicationAction: #{jsAction @Applications.newApplication() /}
     } 
+    
+    $(document).ready(function(){
+        $('#btnLogin').click(function(){
+            var username = $('#username').val();
+            var password = $('#password').val();
+            
+            $.post('/login', {username: username, password: password}, function(data) {
+                //alert("Login successful!");
+                $.get('/ajax/menu', function(data){
+                    $('#navwrapper').empty();
+                    $('#navwrapper').append(data);
+                });
+            });
+        });
+        
+        $('#btnLogout').click(function(){
+           $.post('/logout', function(data){
+              alert("Logout successful"); 
+              $.get('/ajax/menu', function(data){
+                  $('#navwrapper').empty();
+                  $('#navwrapper').append(data);
+              });
+           });
+        });
+    });
     </script>
 </head>
 <body>
@@ -34,23 +58,45 @@
 		<div class="navbar">
 			<!-- CategoryMenu -->
 			<ul class="nav nav-pills pull-left">
-				<li><a href="#">I am a <strong>Company</strong></a></li>
+				<li><a href="@">I am a <strong>Company</strong></a></li>
 				<li class="active"><a href="#">I am a <strong>Designer</strong></a></li>
 			</ul>
-
+         <div id="navwrapper">
 			<!-- MainMenu -->
-			<ul class="nav nav-pills pull-right">
-			<!--Added by Anamika User Session-->
-			 %{
-                    	if(session.get("user") != null)
-   							userexist = true;
-   						else
-   							userexist = false;
-				}%
+			#{if !user}
+			<ul class="nav pull-right">
+             <li class="dropdown" id="menuLogin">
+               <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">Login</a>
+               <div class="dropdown-menu" style="padding:17px;">
+                 <form class="form" id="formLogin"> 
+                   <input name="username" id="username" type="text" placeholder="Username"> 
+                   <input name="password" id="password" type="password" placeholder="Password"><br>
+                   <button type="button" id="btnLogin" class="btn">Login</button>
+                 </form>
+               </div>
+             </li>
+           </ul>
+         #{/if}
+         #{else}
+         <ul class="nav pull-right">
+             <li class="dropdown" id="menuLogin">
+               <a class="dropdown-toggle" href="#" data-toggle="dropdown" id="navLogin">${user}</a>
+               <ul class="dropdown-menu" style="padding:17px;">
+                 <li><button class="btn" id="btnLogout">Logout</button></li>
+               </ul>
+             </li>
+           </ul>
+         #{/else}
+         #{if user}
+			<ul class="nav pull-right">
 				<li><a href="@{Application.index()}">Home</a></li>
 				<li><a href="@{Projects.list()}">Projects</a></li>
 				<li><a href="#">My Profile</a></li>
 				<li><a href="#">Applications</a></li>
+			</ul>
+			#{/if}
+			</div>
+	        <!-- 
 				#{if userexist}
 				<li><a href="@{Application.logout()}">Sign Out</a></li>
 				#{/if}
@@ -58,7 +104,7 @@
 				<li><a href="@{Application.login()}">Sign in</a></li>
 				#{/else}
 				<!--Added by Anamika User Session End-->
-			</ul>
+			<!-- </ul> -->
 		</div>
 
 		#{doLayout /}

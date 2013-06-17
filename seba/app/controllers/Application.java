@@ -9,6 +9,15 @@ import models.*;
 
 public class Application extends Controller {
 
+    @Before(priority=10)
+    static void setConnectedUser()
+    {
+        if(Security.isConnected()) {
+            User user =  (User)User.findAll().get(0);
+            renderArgs.put("user", user);
+        }
+    }
+    
     public static void index() {
         render();
     }

@@ -10,7 +10,6 @@ import play.mvc.With;
 import play.mvc.results.Ok;
 import play.mvc.results.Result;
 
-@With(Secure.class)
 public class Applications extends BasicAuthenticationController{
 
     public static void newApplication(){

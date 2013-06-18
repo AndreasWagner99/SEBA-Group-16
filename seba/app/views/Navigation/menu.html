@@ -1,0 +1,59 @@
+<!-- MainMenu -->
+	#{if user}
+	<ul class="nav pull-right">
+		<li class="dropdown" id="menuLogin"><a class="dropdown-toggle"
+			href="#" data-toggle="dropdown" id="navLogin">${user}</a>
+			<ul class="dropdown-menu" style="padding: 17px;">
+				<li><button class="btn" id="btnLogout">Logout</button></li>
+			</ul></li>
+	</ul>
+	<ul class="nav pull-right">
+		<li><a href="@{Application.index()}">Home</a></li>
+		<li><a href="@{Projects.list()}">Projects</a></li>
+		<li><a href="#">My Profile</a></li>
+		<li><a href="#">Applications</a></li>
+	</ul>
+	<script type="text/javascript">
+	$(document).ready(function(){
+        $('#btnLogout').click(function(){
+           $.get('/logout', function(data){
+              //alert("Logout successful"); 
+              $.get('/ajax/menu', function(data){
+                  $('#navwrapper').empty();
+                  $('#navwrapper').append(data);
+              });
+           });
+        });
+    });
+	</script>
+	#{/if}
+	#{else}
+	<ul class="nav pull-right">
+      <li class="dropdown" id="menuLogin"><a class="dropdown-toggle"
+         href="#" data-toggle="dropdown" id="navLogin">Login</a>
+         <div class="dropdown-menu" style="padding: 17px;">
+            <form class="form" id="formLogin">
+               <input name="username" id="username" type="text"
+                  placeholder="Username"> <input name="password"
+                  id="password" type="password" placeholder="Password"><br>
+               <button type="button" id="btnLogin" class="btn">Login</button>
+            </form>
+         </div></li>
+   </ul>
+   <script type="text/javascript">
+   $(document).ready(function(){
+        $('#btnLogin').click(function(){
+            var username = $('#username').val();
+            var password = $('#password').val();
+            
+            $.post('/login', {username: username, password: password}, function(data) {
+                //alert("Login successful!");
+                $.get('/ajax/menu', function(data){
+                    $('#navwrapper').empty();
+                    $('#navwrapper').append(data);
+                });
+            });
+        });
+   });
+   </script>
+   #{/else}

@@ -1,9 +1,6 @@
 # Routes
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
-
-# Import Secure routes
-*       /                                       module:secure
 # Home page
 GET     /                                       Application.index
 
@@ -22,12 +19,6 @@ GET 	/Registration/company						Registration.company
 #Ajax-Helper
 GET  /ajax/menu                            AjaxHelper.menu
 
-# login
-GET     /login                              Application.login
-
-# logout
-GET     /logout                             Application.logout
-
 # Ignore favicon requests
 GET     /favicon.ico                            404
 
@@ -36,3 +27,5 @@ GET     /public/                                staticDir:public
 
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
+# Import Secure routes
+*       /                                       module:secure

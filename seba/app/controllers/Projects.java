@@ -6,8 +6,6 @@ import models.Project;
 import play.mvc.Controller;
 import play.mvc.With;
 
-
-@With(Secure.class)
 public class Projects extends BasicAuthenticationController {
 
 	public static void list(){

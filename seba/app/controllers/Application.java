@@ -8,7 +8,7 @@ import java.util.*;
 import models.*;
 
 public class Application extends Controller {
-
+    
     @Before(priority=10)
     static void setConnectedUser()
     {

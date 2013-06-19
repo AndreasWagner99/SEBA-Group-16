@@ -26,5 +26,33 @@ $(document).ready(function(){
         
         $('#applicationDialog').modal();
     });
+    
+    $('.newProjectButton').click(function(){
+        var parentDialog = $(this).parent().parent().parent().parent();
+        $(parentDialog).modal('hide');
+        
+        $('#newProjectSave').click(function(){
+            var title = $('#title').val();
+            var form = $('#newProjectForm');
+            var formData = new FormData();
+            formData.append("title", title);
+            formData.append("teaser", teaser);
+            formData.append("description", description);
+            
+            
+            $.ajax({
+                type: "POST",
+                url: routes.applicationAction(),
+                data: formData,
+                success: function(data){$('.modal').modal('hide')},
+                cache: false,
+                contentType: false,
+                processData: false
+              });
+            
+        });
+        $('#newProjectDialog').modal();
+    });
 }
 );
+

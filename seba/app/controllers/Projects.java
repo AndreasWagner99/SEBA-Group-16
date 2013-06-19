@@ -1,5 +1,6 @@
 package controllers;
 
+import java.io.File;
 import java.util.List;
 
 import models.Project;
@@ -12,4 +13,10 @@ public class Projects extends BasicAuthenticationController {
 		List<Project> projects = Project.findAll();
 		render(projects);
 	}
+	
+    public static void newProject(){
+    	
+      //  new Project(title, teaser, description, mycompany).save();
+      //  ok();
+    }
 }

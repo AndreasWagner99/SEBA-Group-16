@@ -17,6 +17,8 @@ $(document).ready(function(){
                 $('#extensionArea').empty();
                 $('#extensionArea').append(data);
             });
+            //Remove registration bar
+            $('#registrationBar').remove();
         });
     });
 });

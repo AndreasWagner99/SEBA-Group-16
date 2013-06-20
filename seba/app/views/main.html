@@ -19,6 +19,7 @@
    #{get 'moreScripts' /}
    
    <script>
+   //Mapping for JavaScript Actions
     var routes = {
         applicationAction: #{jsAction @Applications.newApplication() /},
         projectAction: #{jsAction @Projects.newProject() /}
@@ -27,7 +28,8 @@
 </head>
 <body>
 	<div class="container">
-		<div class="navbar clearfix">
+	#{if !designer && !company}
+		<div class="navbar clearfix" id="registrationBar">
 			<div class="navbar-inner">
 				<!-- CategoryMenu -->
 				<ul class="nav nav-pills">
@@ -36,6 +38,7 @@
 				</ul>
 			</div>
 		</div>
+	#{/if}
 		<div class="navbar">
 			<div class="navbar-inner">
 			   <div id="navwrapper">

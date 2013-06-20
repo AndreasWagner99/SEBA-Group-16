@@ -8,10 +8,10 @@ GET     /                                       Application.index
 GET		/projects/list							      Projects.list
 
 #Applications
-POST     /applications                          Applications.newApplication
+POST     /applications                    Applications.newApplication
 
 #Post Projects
-POST     /newProject                          Projects.newProject
+POST     /projects                         Projects.newProject
 
 #Registration of Designer
 GET 	/Registration/designer						Registration.designer

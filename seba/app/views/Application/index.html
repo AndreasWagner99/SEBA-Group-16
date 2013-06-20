@@ -1,16 +1,11 @@
 #{extends 'main.html' /} 
 #{set title:'Home' /}
-<!-- User Session Added By Anamika -->
-%{
-                  	if(session.get("user") != null)
- 							uname = session.get("user");
- 					}%
- <!-- Added By Anamika -->
+
 <div class="row">
 	<div class="span12">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">
 			<tr>
-				<td width="47%"><img src="/public/images/logo_bg.png"
+				<td width="47%"><img src="/public/images/main-logo.png"
 					width="424" height="203" alt="Let's cover You" /></td>
 				<td width="53%">
 					<div class="welcometext">We offer a win-win platform for businesses, experienced software 
@@ -22,7 +17,6 @@
 		</table>
 	</div>
 </div>
-<br />
 
 <div class="row content" align="center" style="padding-top:20px;">
 	
@@ -65,7 +59,6 @@
 
 <div class="row content">
 	<div>
-		<img src="/public/images/adbanner.png" width="960" height="150" />
 
 		<div align="center" style="padding: 5px; padding-top: 10px; margin-top: 15px; border-top: 1px dotted #e7d6ae; color: #453825; font-size: 90%;">
 			We offer a win-win platform for businesses, experienced software developers and professional 
@@ -88,17 +81,47 @@
 	</div>
 </div>
 <div id="uppernav">
-			
-				<!--MegaMenu Starts-->
-				<ul>
-					<li><a href="#">CONTACT US</a></li>
-					<li><a href="#">FAQS/HOW TO</a></li>
-					<li><a href="#">BLOG</a></li>
-					<li><a href="#">TERMS & CONDITIONS</a></li>
-					<li><a href="#">PRIVACY POLICY</a></li>
-					<li><a href="#">ABOUT US</a></li>
-					<li><a href="#">HOME</a></li>
-				</ul>
-				<!--MegaMenu Ends-->
-			
-		</div> <br/><br/>
+
+	<!--MegaMenu Starts-->
+	<ul>
+		<li><a href="#">CONTACT US</a></li>
+		<li><a href="#">FAQS/HOW TO</a></li>
+		<li><a href="#">BLOG</a></li>
+		<li><a href="#">TERMS & CONDITIONS</a></li>
+		<li><a href="#">PRIVACY POLICY</a></li>
+		<li><a href="#">ABOUT US</a></li>
+		<li><a href="#">HOME</a></li>
+	</ul>
+	<!--MegaMenu Ends-->
+
+</div>
+#{if company}
+<!-- Modal Dialog for Posting New Projects -->
+<div id="newProjectDialog" class="modal hide fade">
+	<div class="modal-header">
+		<button type="button" class="close" data-dismiss="modal"
+			aria-hidden="true">&times;</button>
+		<h3>New Project</h3>
+	</div>
+	<div class="modal-body">
+		<form id="newProjectForm" enctype="multipart/form-data">
+			<fieldset>
+				<label>Title: <input type="text" id="title"
+					class="text-input"></input>
+				</label> <label>Teaser</label>
+				<textarea rows="2" class="span7" id="teaser"></textarea>
+				<label>Description</label>
+				<textarea rows="5" class="span7" id="description"></textarea>
+				<!--  <label>Owner: 
+      <input type="text" id="owner" class="text-input"></input></label> -->
+			</fieldset>
+		</form>
+	</div>
+	<div class="modal-footer">
+		<ul class="pager">
+			<li class="next"><a href="#" id="newProjectSave" data-id="${company.id}">Post</a></li>
+		</ul>
+	</div>
+</div>
+
+#{/if}

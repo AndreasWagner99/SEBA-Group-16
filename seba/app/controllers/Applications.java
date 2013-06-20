@@ -21,4 +21,8 @@ public class Applications extends BasicAuthenticationController{
         app.save();
         ok();
     }
+    
+    public static void list(){
+        
+    }
 }

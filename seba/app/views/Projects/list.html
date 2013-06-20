@@ -7,46 +7,7 @@
 	#{list items:projects, as:'projectItem'}
 		#{project project:projectItem, mode:'preview'/}
 	#{/list}
-	</div> <br/>
-	
-	
-	<div class="row content" style="padding:30px">
-	<h4>Post New Project: </h4> <hr>
-	<p>
-	   <a href="#" role="button" class="btn newProjectButton" data-toggle="modal">Post Now</a>
-   </p>
-	
-<!-- Modal Dialog for Posting New Projects -->
-<div id="newProjectDialog" class="modal hide fade">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"
-			aria-hidden="true">&times;</button>
-		<h3>New Project</h3>
 	</div>
-	<div class="modal-body">
-	<form id="newProjectForm" enctype="multipart/form-data">
-	  <fieldset>
-      <label>Title: 
-      <input type="text" id="title" class="text-input"></input> </label>
-      <label>Teaser</label>
-      <textarea rows="2" class="span7" id="teaser"></textarea>
-      <label>Description</label>
-      <textarea rows="5" class="span7" id="description"></textarea>
-    <!--  <label>Owner: 
-      <input type="text" id="owner" class="text-input"></input></label> -->
-      </fieldset>
-   </form>
-	</div>
-	<div class="modal-footer">
-		<ul class="pager">
-			<li class="next"><a href="#" id="newProjectSave">Post</a></li>
-		</ul>
-	</div>
-</div>
-
- 
-	</div>
-	
 #{/if}
 
 #{else}

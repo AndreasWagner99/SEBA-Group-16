@@ -1,32 +1,34 @@
 <!-- MainMenu -->
-	#{if user}
+	#{if designer}
 	<ul class="nav pull-right">
 		<li class="dropdown" id="menuLogin"><a class="dropdown-toggle"
-			href="#" data-toggle="dropdown" id="navLogin">${user}</a>
+			href="#" data-toggle="dropdown" id="navLogin">${designer}</a>
 			<ul class="dropdown-menu" style="padding: 17px;">
-				<li><button class="btn" id="btnLogout">Logout</button></li>
+				<li><a class="btn" id="btnLogout" href="@{Secure.logout()}">Logout</a></li>
 			</ul></li>
 	</ul>
 	<ul class="nav pull-right">
 		<li><a href="@{Application.index()}">Home</a></li>
-		<li><a href="@{Projects.list()}">Projects</a></li>
-		<li><a href="#">My Profile</a></li>
-		<li><a href="#">Applications</a></li>
+		<li><a href="@{Projects.list()}">Browse</a></li>
+		<li><a href="#">My Applications</a></li>
+		<li><a href="#">Profile</a></li>
 	</ul>
-	<script type="text/javascript">
-	$(document).ready(function(){
-        $('#btnLogout').click(function(){
-           $.get('/logout', function(data){
-              //alert("Logout successful"); 
-              $.get('/ajax/menu', function(data){
-                  $('#navwrapper').empty();
-                  $('#navwrapper').append(data);
-              });
-           });
-        });
-    });
-	</script>
 	#{/if}
+	#{elseif company}
+	<ul class="nav pull-right">
+      <li class="dropdown" id="menuLogin"><a class="dropdown-toggle"
+         href="#" data-toggle="dropdown" id="navLogin">${company}</a>
+         <ul class="dropdown-menu" style="padding: 17px;">
+            <li><a class="btn" id="btnLogout" href="@{Secure.logout()}">Logout</a></li>
+         </ul></li>
+   </ul>
+   <ul class="nav pull-right">
+      <li><a href="@{Application.index()}">Home</a></li>
+      <li><a href="#">Post a project</a></li>
+      <li><a href="#">Review applications</a></li>
+      <li><a href="#">My Projects</a></li>
+   </ul>
+	#{/elseif}
 	#{else}
 	<ul class="nav pull-right">
       <li class="dropdown" id="menuLogin"><a class="dropdown-toggle"

@@ -4,12 +4,18 @@ Designer(Bob):
     city: Nürnberg
     zip: 99999
     street: teststrasse 9
+    isDesigner: true
+    email: bobmeyers@aol.com
+    password: secret
 
 Company(IBM):
     fullname: IBM
     city: Seattle
     zip: 88888
     street: ibm-street 1
+    isDesigner: false
+    email: user@ibm.com
+    password: secret
 
 Project(MegaProject):
     title: MegaProject

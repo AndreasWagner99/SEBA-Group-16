@@ -24,42 +24,40 @@
    
    <script>
     var routes = {
-        applicationAction: #{jsAction @Applications.newApplication() /}
+        applicationAction: #{jsAction @Applications.newApplication() /},
+        projectAction: #{jsAction @Projects.newProject() /}
     } 
     </script>
 </head>
 <body>
 	<div class="container">
+		<div class="navbar clearfix">
+			<div class="navbar-inner">
+				<!-- CategoryMenu -->
+				<ul class="nav nav-pills">
+					<li><a href="#">I am a <strong>Company</strong></a></li>
+					<li><a href="#">I am a <strong>Designer</strong></a></li>
+				</ul>
+			</div>
+		</div>
 		<div class="navbar">
-			<!-- CategoryMenu -->
-			<ul class="nav nav-pills pull-left">
-				<li><a href="@">I am a <strong>Company</strong></a></li>
-				<li class="active"><a href="#">I am a <strong>Designer</strong></a></li>
-			</ul>
-         <div id="navwrapper">
-			   #{include 'Navigation/menu.html'/}
+			<div class="navbar-inner">
+			   <div id="navwrapper">
+				#{include 'Navigation/menu.html'/}
+				</div>
+         </div>
+      </div>
+
+				#{doLayout /}
+
+				<div class="row" id="footer">
+					<div class="span12">
+
+						<strong>LetsCoverYou&reg;</strong> is a product of SEBA Group 16
+						Team | Powered by <strong>Matthias, Andreas, Anamika and
+							Kehinde </strong> || © 2013 All rights reserved
+					</div>
+				</div>
 			</div>
-	        <!-- 
-				#{if userexist}
-				<li><a href="@{Application.logout()}">Sign Out</a></li>
-				#{/if}
-				#{else }
-				<li><a href="@{Application.login()}">Sign in</a></li>
-				#{/else}
-				<!--Added by Anamika User Session End-->
-			<!-- </ul> -->
-		</div>
-
-		#{doLayout /}
-
-		<div class="row" id="footer">
-			<div class="span12">
-
-				<strong>LetsCoverYou&reg;</strong> is a product of SEBA Group 16
-				Team | Powered by <strong>Matthias, Andreas, Anamika
-					and Kehinde </strong> ||  © 2013 All rights reserved
-			</div>
-		</div>
-	</div>
 </body>
 </html>

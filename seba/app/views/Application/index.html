@@ -95,33 +95,3 @@
 	<!--MegaMenu Ends-->
 
 </div>
-#{if company}
-<!-- Modal Dialog for Posting New Projects -->
-<div id="newProjectDialog" class="modal hide fade">
-	<div class="modal-header">
-		<button type="button" class="close" data-dismiss="modal"
-			aria-hidden="true">&times;</button>
-		<h3>New Project</h3>
-	</div>
-	<div class="modal-body">
-		<form id="newProjectForm" enctype="multipart/form-data">
-			<fieldset>
-				<label>Title: <input type="text" id="title"
-					class="text-input"></input>
-				</label> <label>Teaser</label>
-				<textarea rows="2" class="span7" id="teaser"></textarea>
-				<label>Description</label>
-				<textarea rows="5" class="span7" id="description"></textarea>
-				<!--  <label>Owner: 
-      <input type="text" id="owner" class="text-input"></input></label> -->
-			</fieldset>
-		</form>
-	</div>
-	<div class="modal-footer">
-		<ul class="pager">
-			<li class="next"><a href="#" id="newProjectSave" data-id="${company.id}">Post</a></li>
-		</ul>
-	</div>
-</div>
-
-#{/if}

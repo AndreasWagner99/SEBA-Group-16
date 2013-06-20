@@ -21,6 +21,7 @@ GET 	/Registration/company						Registration.company
 
 #Ajax-Helper
 GET  /ajax/menu                            AjaxHelper.menu
+GET  /ajax/extensions                      AjaxHelper.extensions
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

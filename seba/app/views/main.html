@@ -4,9 +4,6 @@
 <head>
 <title>#{get 'title' /}</title>
    #{set 'moreStyles'}
-	<!-- #{stylesheet 'main.css'/} -->
-	<!-- "#{stylesheet 'reset.css'/} -->
-   <!-- #{stylesheet 'stimenu.css'/} -->
       #{stylesheet 'style.css'/} 
       #{stylesheet 'bootstrap.css'/} 
    #{/set} 
@@ -15,7 +12,7 @@
    #{set 'moreScripts'} 
       #{script 'jquery.min.js'/}   
       #{script 'bootstrap.min.js'/}
-      #{script 'buttonHandling.js'/}
+      #{script 'loginHandling.js'/}
       #{script 'applicationHandling.js'/}
       #{script 'projectHandling.js'/}
    #{/set} 
@@ -34,8 +31,8 @@
 			<div class="navbar-inner">
 				<!-- CategoryMenu -->
 				<ul class="nav nav-pills">
-					<li><a href="#">I am a <strong>Company</strong></a></li>
-					<li><a href="#">I am a <strong>Designer</strong></a></li>
+					<li><a href="@{Registration.company()}">I am a <strong>Company</strong></a></li>
+					<li><a href="@{Registration.designer()}">I am a <strong>Designer</strong></a></li>
 				</ul>
 			</div>
 		</div>
@@ -57,6 +54,9 @@
 							Kehinde </strong> || © 2013 All rights reserved
 					</div>
 				</div>
+			</div>
+			<div id="extensionArea">
+			   #{include 'Extensions/extension.html'/}
 			</div>
 </body>
 </html>

@@ -13,4 +13,9 @@ public class AjaxHelper extends BasicController {
         renderTemplate("Navigation/menu.html");
         ok();
     }
+    
+    public static void extensions(){
+        renderTemplate("Extensions/extension.html");
+        ok();
+    }
 }

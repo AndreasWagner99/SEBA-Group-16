@@ -19,7 +19,7 @@ public class Projects extends BasicAuthenticationController {
         String title = params.get("title");
         String teaser = params.get("teaser");
         String description = params.get("description");
-        Company c = Company.findById(Long.valueOf(params.get("companyid")));
+        Company c = Company.findById(Long.valueOf(params.get("companyId")));
         new Project(title, teaser, description, c).save();
         ok();
     }

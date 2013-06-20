@@ -13,12 +13,11 @@
    #{get 'moreStyles' /} 
    
    #{set 'moreScripts'} 
-      #{script 'jquery.min.js'/} 
-      #{script 'jquery-ui.min.js'/} 
-      #{script 'jquery.easing.1.3.js'/} 
-      #{script 'jquery.iconmenu.js'/} 
+      #{script 'jquery.min.js'/}   
       #{script 'bootstrap.min.js'/}
+      #{script 'buttonHandling.js'/}
       #{script 'applicationHandling.js'/}
+      #{script 'projectHandling.js'/}
    #{/set} 
    #{get 'moreScripts' /}
    
@@ -26,7 +25,7 @@
     var routes = {
         applicationAction: #{jsAction @Applications.newApplication() /},
         projectAction: #{jsAction @Projects.newProject() /}
-    } 
+    }
     </script>
 </head>
 <body>

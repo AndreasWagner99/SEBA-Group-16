@@ -7,27 +7,24 @@ import java.util.*;
 
 import models.*;
 
-public class Application extends Controller {
-    
-    @Before(priority=10)
-    static void setConnectedUser()
-    {
-        if(Security.isConnected()) {
-            User user =  (User)User.findAll().get(0);
-            renderArgs.put("user", user);
-        }
-    }
+public class Application extends BasicController {
     
     public static void index() {
         render();
     }
+    
+    @Deprecated
     public static void login() {
         render();
     }
+    
+    @Deprecated
     public static void logout() {
         session.clear();
         index();
     }
+    
+    @Deprecated
     public static void check(String email, String password) {
         validation.required(email);
         validation.required(password);

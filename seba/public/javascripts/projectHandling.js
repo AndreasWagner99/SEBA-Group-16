@@ -1,20 +1,24 @@
 $(document).ready(function(){
-    $('.applyButton').click(function(){
+$('.newProjectButton').click(function(){
         var parentDialog = $(this).parent().parent().parent().parent();
-        var projId = $(this).data("project");
+        var companyId = $(this).data("companyId");
         $(parentDialog).modal('hide');
         
-        $('#applSave').click(function(){
-            var description = $('#description').val();
-            var form = $('#applicationForm');
+        $('#newProjectSave').click(function(){
+            var title = $('#title').val();
+            var teaser = $('#teaser').val();
+            var description = $('#description');
+            var form = $('#newProjectForm');
             var formData = new FormData();
+            formData.append("title", title);
+            formData.append("teaser", teaser);
             formData.append("description", description);
-            formData.append("projId", projId);
-            formData.append("file", form[0][1].files[0]);
+            formData.append("companyId", companyId);
+            
             
             $.ajax({
                 type: "POST",
-                url: routes.applicationAction(),
+                url: routes.projectAction(),
                 data: formData,
                 success: function(data){$('.modal').modal('hide')},
                 cache: false,
@@ -23,9 +27,6 @@ $(document).ready(function(){
               });
             
         });
-        
-        $('#applicationDialog').modal();
+        $('#newProjectDialog').modal();
     });
-}
-);
-
+})

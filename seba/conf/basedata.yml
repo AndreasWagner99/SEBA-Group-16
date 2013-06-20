@@ -14,6 +14,7 @@ Company(IBM):
     zip: 88888
     street: ibm-street 1
     isDesigner: false
+    companyName: IBM
     email: user@ibm.com
     password: secret
 

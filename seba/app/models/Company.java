@@ -12,7 +12,8 @@ import play.data.validation.Required;
 @Entity
 public class Company extends User {
 
-	@Required(message = "Please Enter Company Name") public String	companyName;
+	@Required(message = "Please Enter Company Name") 
+	public String	companyName;
 	public Company(String companyName, String street, String zip, String city,String password, String verifyPassword, String email) {
 		super(street, zip, city, password, verifyPassword, email, false);
 		this.companyName = companyName;

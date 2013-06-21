@@ -21,9 +21,9 @@ public class Registration extends Controller {
             //validation.keep();
         	render("@Registration.designer", designer);
         }  
-        designer.create();
-        session.put("user", designer.toString());
-        renderTemplate("@Application.index",designer.toString());
+        designer.save();
+        session.put("designer", designer);
+        renderTemplate("@Application.index");
 		
 	}
 	public static void saveCompany(@Valid Company company)
@@ -33,9 +33,9 @@ public class Registration extends Controller {
             //validation.keep();
             render("@Registration.company", company);
         }
-        company.create();
-        session.put("company", company.email);
-        renderTemplate("@Application.index",company.companyName);
+        company.save();
+        session.put("company", company);
+        renderTemplate("@Application.index");
 		
 	}
 }

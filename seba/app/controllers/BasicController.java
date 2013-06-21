@@ -13,11 +13,13 @@ public class BasicController extends Controller {
     {
         if(Security.isConnected()) {
             User user =  (User)User.find("byEmail", Security.connected()).first();
-            if(user.isDesigner){
-                renderArgs.put("designer", ((Designer)(Designer.findById(user.id))).firstName);
-            }
-            else{
-                renderArgs.put("company", ((Company)Company.findById(user.id)));
+            if(user != null){
+                if(user.isDesigner){
+                    renderArgs.put("designer", ((Designer)(Designer.findById(user.id))).firstName);
+                }
+                else{
+                    renderArgs.put("company", ((Company)Company.findById(user.id)));
+                }
             }
         }
     }

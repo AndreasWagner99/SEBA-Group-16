@@ -29,6 +29,9 @@ GET     /favicon.ico                            404
 # Map static resources from the /app/public folder to the /public path
 GET     /public/                                staticDir:public
 
+#Login
+POST    /authenticate                          Secure.authenticate
+
 # Catch all
 *       /{controller}/{action}                  {controller}.{action}
 # Import Secure routes

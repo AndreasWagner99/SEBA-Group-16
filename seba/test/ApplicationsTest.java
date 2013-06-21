@@ -10,7 +10,7 @@ import play.test.UnitTest;
 public class ApplicationsTest extends UnitTest {
 
     @Test
-    public void newApplicationTest(){
+    public void testNewApplication(){
         Designer designer = Designer.findById(0L);
         Project project = Project.findById(0L);
         String explanation = "Testapplication";

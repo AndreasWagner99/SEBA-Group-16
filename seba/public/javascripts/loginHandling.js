@@ -3,10 +3,10 @@ $(document).ready(function(){
         var username = $('#username').val();
         var password = $('#password').val();
 
-        $.post('/login', {
+        $.post('/authenticate', {
             username : username,
             password : password
-        }, function(data) {
+        }, function(data, text, response) {
             //Update menu
             $.get('/ajax/menu', function(data) {
                 $('#navwrapper').empty();
@@ -19,6 +19,11 @@ $(document).ready(function(){
             });
             //Remove registration bar
             $('#registrationBar').remove();
+        })
+        .error(function(req, textStatus, errorThrown){
+            if(req.status == 403){
+                alert("wrong username or password");
+            }
         });
     });
 });

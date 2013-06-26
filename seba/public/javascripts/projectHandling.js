@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#newProjectSave').click(function(){
+    $('body').on("click", '#newProjectSave', function(){
         var companyId = $(this).data("id");
         var title = $('#title').val();
         var teaser = $('#teaser').val();
@@ -22,5 +22,13 @@ $(document).ready(function(){
             processData: false
           });
         
+    });
+    
+    $('body').on("click", '.projectRadio', function(){
+       var id = $(this).val();
+       $.get(routes.applicationListing(), {projectId: id}, function(data){
+           $('#applicationArea').empty();
+           $('#applicationArea').append(data);
+       });
     });
 });

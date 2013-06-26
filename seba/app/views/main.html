@@ -22,7 +22,8 @@
    //Mapping for JavaScript Actions
     var routes = {
         applicationAction: #{jsAction @Applications.newApplication() /},
-        projectAction: #{jsAction @Projects.newProject() /}
+        projectAction: #{jsAction @Projects.newProject() /},
+        applicationListing: #{jsAction @Applications.list() /}
     }
     </script>
 </head>

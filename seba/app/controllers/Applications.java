@@ -1,8 +1,10 @@
 package controllers;
 
 import java.io.File;
+import java.util.List;
 
 import models.Appl;
+import models.Company;
 import models.Designer;
 import models.Project;
 import play.mvc.Controller;
@@ -22,7 +24,15 @@ public class Applications extends BasicAuthenticationController{
         ok();
     }
     
-    public static void list(){
-        
+    public static void list(Long projectId){
+        Project p = Project.findById(projectId);
+        List<Appl> applications = Appl.find("byProject", p).fetch();
+        render(applications);
+    }
+    
+    public static void review(Long companyID){
+        Company c = Company.findById(companyID);
+        List<Project> projects = Project.find("byOwner", c).fetch();
+        render(projects);
     }
 }

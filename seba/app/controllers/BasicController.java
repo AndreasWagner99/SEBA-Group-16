@@ -18,7 +18,8 @@ public class BasicController extends Controller {
                     renderArgs.put("designer", ((Designer)(Designer.findById(user.id))).firstName);
                 }
                 else{
-                    renderArgs.put("company", ((Company)Company.findById(user.id)));
+                    Company c = Company.findById(user.id);
+                    renderArgs.put("company", c);
                 }
             }
         }

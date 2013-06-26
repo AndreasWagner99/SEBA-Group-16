@@ -1,0 +1,23 @@
+#{extends 'main.html' /}
+
+#{set title:'Applications' /}
+<div><br/><br/></div>
+#{if projects}
+   <div class="row content">
+      <div class="span3">
+	   #{list items:projects, as:'projectItem'}
+		   <label class="radio">
+		   <input type="radio" name="Project" value="${projectItem.id}" class="projectRadio"/>
+		     ${projectItem.title}
+		   </label>
+	   #{/list}
+      </div>
+      <div class="span9" id="applicationArea"></div>
+   </div>
+#{/if}
+
+#{else}
+   <div class="row content">
+      No projects listed yet.
+   </div>
+#{/else}

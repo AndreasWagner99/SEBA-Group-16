@@ -4,6 +4,12 @@
 # Home page
 GET     /                                       Application.index
 
+#Pages
+GET     /terms                                  Application.terms
+GET     /privacypolicy                          Application.privacypolicy
+GET     /about                                  Application.about
+GET     /faqs                                  Application.howitworks
+
 #Browse projects
 GET		/projects/list							      Projects.list
 

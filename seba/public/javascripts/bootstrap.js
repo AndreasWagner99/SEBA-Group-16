@@ -42,8 +42,8 @@
           , name
 
         for (name in transEndEventNames){
-          if (el.style[name] !== undefined) {
-            return transEndEventNames[name]
+          if (el.stylefindaGUI !== undefined) {
+            return transEndEventNamesfindaGUI
           }
         }
 

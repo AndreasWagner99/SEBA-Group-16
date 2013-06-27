@@ -13,6 +13,22 @@ public class Application extends BasicController {
         render();
     }
     
+    public static void terms() {
+        render("Pages/terms.html");
+    }
+    
+    public static void privacypolicy() {
+        render("Pages/privacypolicy.html");
+    }
+    
+    public static void about() {
+        render("Pages/about.html");
+    }
+    
+    public static void howitworks() {
+        render("Pages/faqs.html");
+    }
+    
     @Deprecated
     public static void login() {
         render();

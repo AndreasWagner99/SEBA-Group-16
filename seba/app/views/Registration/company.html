@@ -2,8 +2,9 @@
 #{set title:'SignUp For Company' /}
 
 
-#{form @saveCompany() , id:'loginform'}
+#{form @Registration.saveCompany() , id:'loginform'}
 <fieldset>
+	
 	#{field 'company.email'}
 			<div class="${field.errorClass}">
 				<div>
@@ -24,35 +25,12 @@
 			</div>
 	#{/field}
 	
-	#{field 'company.street'}
-			<div class="${field.errorClass}">
-				<div>
-				<label for="${field.id}">Street</label><br />
-				</div>
-					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${company?.street}"/>
-					<span class="error">${field.error}</span> <br />
-			</div>
-	#{/field}
-	
-	#{field 'company.city'}
-			<div class="${field.errorClass}">
-				<div>
-					<label for="${field.id}">City</label><br />
-				</div>
-					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${company?.city}"/>
-					<span class="error">${field.error}</span> <br />
-			</div>
-	#{/field}
-	
-	#{field 'company.zip'}
-			<div class="${field.errorClass}">
-				<div>
-					<label for="${field.id}">Zip</label><br />
-				</div>
-					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${company?.zip}"/>
-					<span class="error">${field.error}</span> <br />
-			</div>
-	#{/field}
+					<input type="hidden" id="${field.id}" class="text-input" name="${field.name}" value="${company?.street}"/>
+					
+					<input type="hidden" id="${field.id}" class="text-input" name="${field.name}" value="${company?.city}"/>
+
+					<input type="hidden" id="${field.id}" class="text-input" name="${field.name}" value="${company?.zip}"/>
+					
 	
 	#{field 'company.password'}
 			<div class="${field.errorClass}">
@@ -73,8 +51,8 @@
 					<span class="error">${field.error}</span> <br />
 			</div>
 	#{/field}	 
-	
-            <input type="button" class="button  but-red" value="Create your account" onclick="submit();"/> 
+
+            <input type="button" class="button  but-red" value="Create your account" onclick="submit();"/>
      </fieldset>
   #{/form}
 <br />

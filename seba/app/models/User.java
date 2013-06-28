@@ -15,7 +15,7 @@ import play.db.jpa.Model;
 public class User extends Model{
 
 	public String	street;
-	@Required @MinSize(5) @Match(value="^[0-9]+$", message="Not a valid Zip Code") public String zip;
+	@MinSize(5) @Match(value="^[0-9]+$", message="Not a valid Zip Code") public String zip;
 	public String	city;
 	@Required
     @MaxSize(15)

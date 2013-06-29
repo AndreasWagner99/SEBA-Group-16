@@ -4,6 +4,8 @@ import javax.persistence.Entity;
 import javax.persistence.ManyToOne;
 import javax.validation.constraints.Size;
 
+import models.Designer;
+
 import org.hibernate.validator.constraints.CreditCardNumber;
 
 import play.data.validation.Equals;
@@ -29,7 +31,7 @@ public class PremiumAccount extends Model {
 	public String expiryDate;
 	public String paymentMethod;
 	
-	public PremiumAccount(Designer designer, String cardNumber, String cardName, String creditAmount, String cVV, String expiryDate, , String paymentMethod) {
+	public PremiumAccount(Designer designer, String cardNumber, String cardName, String creditAmount, String cVV, String expiryDate, String paymentMethod) {
 		super();
 		this.designer = designer;
 		this.cardName = cardNumber;
@@ -39,6 +41,7 @@ public class PremiumAccount extends Model {
 		this.expiryDate = expiryDate;
 		this.paymentMethod = paymentMethod;
 	}
+	
 	
 
 }

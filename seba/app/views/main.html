@@ -15,6 +15,7 @@
       #{script 'loginHandling.js'/}
       #{script 'applicationHandling.js'/}
       #{script 'projectHandling.js'/}
+      #{script 'premiumAccount.js'/}
    #{/set} 
    #{get 'moreScripts' /}
    
@@ -23,7 +24,8 @@
     var routes = {
         applicationAction: #{jsAction @Applications.newApplication() /},
         projectAction: #{jsAction @Projects.newProject() /},
-        applicationListing: #{jsAction @Applications.list() /}
+        applicationListing: #{jsAction @Applications.list() /},
+        paymentAction: #{jsAction @Application.premimumPayment() /}
     }
     </script>
 </head>

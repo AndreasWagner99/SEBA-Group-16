@@ -13,6 +13,19 @@ public class Application extends BasicController {
         render();
     }
     
+public static void premimumPayment(){
+    	
+    	String cardNum = params.get("cardNum");
+    	String cardName = params.get("cardName");
+    	String expirydate = params.get("expirydate");
+    	String cvv = params.get("cvv");
+    	String creditAmt = params.get("creditAmt");
+    	Designer d = Designer.findById(Long.valueOf(params.get("designerId")));
+    	PremiumAccount p=new PremiumAccount(d, cardNum, cardName, creditAmt, cvv, expirydate ).save();
+    	System.out.println(p.cardName);
+    	ok();
+    }
+
     public static void terms() {
         render("Pages/terms.html");
     }

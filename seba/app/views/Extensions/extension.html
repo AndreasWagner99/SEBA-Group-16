@@ -1,5 +1,111 @@
 #{if designer}
-   
+ <!-- Modal Dialog for Buying Premium Account -->  
+ <div id="buyPremiumAccount" class="modal hide fade">
+ 	<div class="modal-header">
+ 		<button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+    <h3 id="myModalLabel">Buy Premium Account</h3>
+ 	</div>
+ 	<div class="modal-body">
+    	<form id="paymentForm" enctype="multipart/form-data">
+    		<fieldset>
+    				<div class="control-group">
+					<label class="control-label">Card Holder's Name</label>
+						<div class="controls">
+							<input type="text" id="cardname" class="input-block-level"  title="Fill your first and last name" required>
+						</div>
+					</div>
+ 
+    	<div class="control-group">
+			<label class="control-label">Card Number</label>
+			<div class="controls">
+				<div class="row-fluid">
+					<div class="span3">
+						<input type="text" id="cardno1" class="input-block-level" autocomplete="off" maxlength="4" title="First four digits" required>
+					</div>
+					<div class="span3">
+						<input type="text" id="cardno2" class="input-block-level" autocomplete="off" maxlength="4" title="Second four digits" required>
+					</div>
+					<div class="span3">
+						<input type="text" id="cardno3" class="input-block-level" autocomplete="off" maxlength="4" title="Third four digits" required>
+					</div>
+					<div class="span3">
+						<input type="text" id="cardno4" class="input-block-level" autocomplete="off" maxlength="4" title="Fourth four digits" required>
+					</div>
+				</div>
+			</div>
+		</div>
+ 
+		<div class="control-group">
+			<label class="control-label">Card Expiry Date</label>
+			<div class="controls">
+				<div class="row-fluid">
+					<div class="span9">
+						<select class="input-block-level" id="month">
+							<option value="January">January</option>
+							<option value="February">February</option>
+							<option value="March">March</option>
+							<option value="April">April</option>
+							<option value="May">May</option>
+							<option value="June">June</option>
+							<option value="July">July</option>
+							<option value="August">August</option>
+							<option value="September">September</option>
+							<option value="October">October</option>
+							<option value="November">November</option>
+							<option value="December">December</option>
+						</select>
+					</div>
+					<div class="span3">
+						<select class="input-block-level" id="year">
+							<option value="2013">2013</option>
+							<option value="2014">2014</option>
+							<option value="2015">2015</option>
+							<option value="2016">2016</option>
+							<option value="2017">2017</option>
+							<option value="2018">2018</option>
+							<option value="2019">2019</option>
+							<option value="2020">2020</option>
+						</select>
+					</div>
+				</div>
+			</div>
+		</div>
+ 
+		<div class="control-group">
+			<label class="control-label">Card CVV</label>
+			<div class="controls">
+				<div class="row-fluid">
+					<div class="span3">
+						<input type="text" id="cvv" class="input-block-level" autocomplete="off" maxlength="3"  title="Three digits at back of your card" required>
+					</div>
+					<div class="span8">
+						<!-- screenshot may be here -->
+					</div>
+				</div>
+			</div>
+		</div>
+		<div class="control-group">
+					<label class="control-label">Credit Amount</label>
+						<div class="controls">
+							<div class="row-fluid">
+								<div class="span3">
+									<input type="text"  id="creditAmt" maxlength="2" class="input-block-level" autocomplete="off"  title="Give Amount" required>
+								</div>
+							</div>
+						</div>
+		</div>
+    		</fieldset>   		
+  	    </form>
+  	</div>  
+  	<div class="modal-footer">
+    		<ul class="pager">
+         <li class="next"><a href="#" id="paymentMethodSave" data-id="${designer.id}">Buy Now</a></li>
+      </ul>
+  	 </div>	 
+ </div>
+ <script type="text/javascript">
+
+</script>
 #{/if}
 
 #{if company}

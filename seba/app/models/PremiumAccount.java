@@ -27,10 +27,9 @@ public class PremiumAccount extends Model {
 	public String creditAmount;
 	public String cVV;
 	public String expiryDate;
+	public String paymentMethod;
 	
-	//public String paymentMethod;
-	
-	public PremiumAccount(Designer designer, String cardNumber, String cardName, String creditAmount, String cVV, String expiryDate) {
+	public PremiumAccount(Designer designer, String cardNumber, String cardName, String creditAmount, String cVV, String expiryDate, , String paymentMethod) {
 		super();
 		this.designer = designer;
 		this.cardName = cardNumber;
@@ -38,6 +37,7 @@ public class PremiumAccount extends Model {
 		this.creditAmount = creditAmount;
 		this.cVV = cVV;
 		this.expiryDate = expiryDate;
+		this.paymentMethod = paymentMethod;
 	}
 	
 

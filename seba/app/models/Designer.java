@@ -14,6 +14,7 @@ public class Designer extends User {
 
 	@Required(message = "Please Enter FirstName") public String firstName;
 	@Required(message = "Please Enter LastName") public String lastName;
+	public boolean isPremium
 	//Maybe later it will be a dedicated type instead of a int 
 	//public int		rating;
 	
@@ -21,6 +22,7 @@ public class Designer extends User {
 		super(street, zip, city, password, verifyPassword, email, true);
 		this.firstName = firstName;
 		this.lastName = lastName;
+		this.isPremium = false;
 	}
 	public String toString()  {
         return firstName +" "+ lastName;

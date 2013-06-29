@@ -21,8 +21,7 @@ public static void premimumPayment(){
     	String cvv = params.get("cvv");
     	String creditAmt = params.get("creditAmt");
     	Designer d = Designer.findById(Long.valueOf(params.get("designerId")));
-    	PremiumAccount p=new PremiumAccount(d, cardNum, cardName, creditAmt, cvv, expirydate ).save();
-    	System.out.println(p.cardName);
+    	new PremiumAccount(d, cardNum, cardName, creditAmt, cvv, expirydate).save();
     	ok();
     }
 

@@ -8,6 +8,7 @@ $(document).ready(function(){
 		var month = $('#month').children("option").filter(":selected").text();
 		var year = $('#year').children("option").filter(":selected").text();
 		var expirydate = month+year;
+		var paymentMethod = $('button[name="paymentMethod"].active').val();
 		
 		var formData = new FormData();
 		formData.append("cardNum", cardNum);
@@ -16,6 +17,7 @@ $(document).ready(function(){
         formData.append("cvv", cvv);
         formData.append("expirydate", expirydate);
         formData.append("designerId", designerId);
+        formData.append("paymentMethod", paymentMethod);
         
         
         $.ajax({

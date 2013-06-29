@@ -440,3 +440,10 @@ ul.megamenu {
 	border-bottom:1px dotted #f4e9d8;
 	line-height:21px;
 	}
+.premium{
+	background-color: white;
+	padding-bottom: 10px;
+	border-bottom: 1px dotted;
+	font-weight: bold;
+	font-family: serif;color: red;
+}

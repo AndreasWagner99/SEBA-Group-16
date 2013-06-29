@@ -25,6 +25,11 @@ GET 	/Registration/designer						Registration.designer
 #Registration of Company
 GET 	/Registration/company						Registration.company
 
+#Add Or Edit Profile Information of Company
+POST 	/FormAddOrEdit/companyinfo						FormAddOrEdit.companyinfo
+
+#Add Or Edit Profile Information of Company
+GET 	/FormAddOrEdit/designerinfo						FormAddOrEdit.designerinfo
 #Ajax-Helper
 GET  /ajax/menu                            AjaxHelper.menu
 GET  /ajax/extensions                      AjaxHelper.extensions

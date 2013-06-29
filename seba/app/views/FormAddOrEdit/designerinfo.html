@@ -1,0 +1,71 @@
+#{extends 'main.html' /}
+#{set title:'Designer Information' /}
+
+<h2>#{if isEdit} Edit Information #{/if}
+#{else}
+Designer Information
+#{/else}</h2>
+
+#{form @FormAddorEdit.editdesignerinfo() , id:'loginform'}
+<fieldset>
+	#{field 'designer.email'}
+				<div>
+					<label for="${field.id}">Email</label><br />
+				</div>
+					<input type="text" readonly="readonly" id="${field.id}" class="text-input" name="${field.name}" value="${designer?.email}"/>
+	#{/field}
+	
+	#{field 'designer.firstName'}
+				<div class="${field.errorClass}">
+					<div>
+						<label for="${field.id}">First Name</label><br />
+					</div>
+					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${designer?.firstName}" />
+					<span class="error">${field.error}</span> <br />
+				</div>
+			#{/field}
+			
+			#{field 'designer.lastName'}
+					<div class="${field.errorClass}">
+						<div>
+							<label for="${field.id}">Last Name</label><br />
+						</div>
+						<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${designer?.lastName}" />
+						<span class="error">${field.error}</span> <br />
+					</div>
+			#{/field}
+			
+			#{field 'designer.street'}
+			<div class="${field.errorClass}">
+				<div>
+					<label for="${field.id}">Street</label><br />
+				</div>
+					<input type="text"  id="${field.id}" class="text-input" name="${field.name}" value="${designer?.street}" />
+					<span class="error">${field.error}</span> <br />
+				</div>
+			#{/field}
+			
+			#{field 'designer.city'}
+			<div class="${field.errorClass}">
+					<div>
+						<label for="${field.id}">City</label><br />
+					</div>
+					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${designer?.city}"  />
+					<span class="error">${field.error}</span> <br />
+					</div>
+			#{/field}
+			
+			#{field 'designer.zip'}
+					<div class="${field.errorClass}">
+						<div>
+							<label for="${field.id}">Zip</label><br />
+						</div>
+					<input type="text" id="${field.id}" class="text-input" name="${field.name}" value="${designer?.zip}" />
+					<span class="error">${field.error}</span> <br />
+				
+				</div>
+			#{/field}
+			
+	            <input type="button" class="button  but-red" value="Edit" onclick="submit();"/>
+     </fieldset>
+#{/form}

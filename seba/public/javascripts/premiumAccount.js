@@ -1,5 +1,5 @@
 $(document).ready(function(){
-    $('#paymentSave').click(function(){
+    $('body').on("click", '#paymentMethodSave',function(){
     	var designerId = $(this).data("id");
 		var cardNum = $('#cardno1').val()+$('#cardno2').val()+$('#cardno3').val()+$('#cardno4').val();
 		var cardName = $('#cardName').val();
@@ -9,6 +9,7 @@ $(document).ready(function(){
 		var year = $('#year').children("option").filter(":selected").text();
 		var expirydate = month+year;
 		
+		var formData = new FormData();
 		formData.append("cardNum", cardNum);
         formData.append("cardName", cardName);
         formData.append("creditAmt", creditAmt);
@@ -19,7 +20,7 @@ $(document).ready(function(){
         
         $.ajax({
             type: "POST",
-            url: routes.premimumPayment(),
+            url: routes.paymentAction(),
             data: formData,
             success: function(data){$('.modal').modal('hide')},
             cache: false,

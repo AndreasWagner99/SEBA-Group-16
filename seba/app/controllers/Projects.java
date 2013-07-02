@@ -24,10 +24,10 @@ public class Projects extends BasicAuthenticationController {
         ok();
     }
     
-    public static void myprojects(Company mycomp){
-    	String c = mycomp.companyName;
-    	Project mypr = Project.find("owner", c).first();	
-		render(mypr);
+    public static void myprojects(Long companyId){
+        Company c = Company.findById(companyId);
+    	List<Project> projects = Project.find("byOwner", c).fetch();	
+		render(projects);
 		
 		/*List<Project> projects = Project.findAll();
 		render(projects);*/

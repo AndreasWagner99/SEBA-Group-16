@@ -1,0 +1,17 @@
+#{extends 'main.html' /}
+
+#{set title:'My Projects' /}
+<div><br/><br/></div>
+#{if projects}
+	<div class="row content">
+	#{list items:projects, as:'projectItem'}
+		#{project project:projectItem, mode:'preview'/}
+	#{/list}
+	</div>
+#{/if}
+
+#{else}
+	<div class="row content">
+		You have not created any project. <a href="#newProjectDialog" data-toggle="modal"> Create One now </a>.
+	</div>
+#{/else}

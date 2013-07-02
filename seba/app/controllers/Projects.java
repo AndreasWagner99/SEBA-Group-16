@@ -23,4 +23,13 @@ public class Projects extends BasicAuthenticationController {
         new Project(title, teaser, description, c).save();
         ok();
     }
+    
+    public static void myprojects(Company mycomp){
+    	String c = mycomp.companyName;
+    	Project mypr = Project.find("owner", c).first();	
+		render(mypr);
+		
+		/*List<Project> projects = Project.findAll();
+		render(projects);*/
+	}
 }

@@ -11,7 +11,8 @@ GET     /about                                  Application.about
 GET     /faqs                                  Application.howitworks
 
 #Browse projects
-GET		/projects/list							      Projects.list
+GET		/projects/list							  Projects.list
+GET		/myprojects							      Projects.myprojects
 
 #Applications
 POST     /applications                    Applications.newApplication

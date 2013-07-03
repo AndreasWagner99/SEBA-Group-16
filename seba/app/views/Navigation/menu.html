@@ -12,7 +12,7 @@
 		<li><a href="@{Projects.list()}">Browse</a></li>
 		<li><a href="#">My Applications</a></li>
 		<li><a href="#buyPremiumAccount" data-toggle="modal">Premium Account</a></li>
-		<li><a href="@{FormAddOrEdit.designerinfo()}">Update Profile</a></li>
+		<li><a href="@{FormAddOrEdit.designerinfo()}">Profile</a></li>
 	</ul>
 	#{/if}
 	#{elseif company}
@@ -25,10 +25,10 @@
    </ul>
    <ul class="nav pull-right">
       <li><a href="@{Application.index()}">Home</a></li>
-      <li><a href="#newProjectDialog" data-toggle="modal">Post a project</a></li>
+      <li><a href="#newProjectDialog" data-toggle="modal">Post Project</a></li>
       <li><a href="@{Applications.review(company.id)}">Review applications</a></li>
       <li><a href="@{Projects.myprojects(company.id)}">My Projects</a></li>
-      <li><a href="@{FormAddOrEdit.companyinfo()}">Update Profile</a></li>
+      <li><a href="@{FormAddOrEdit.companyinfo()}">Profile</a></li>
    </ul>
 	#{/elseif}
 	#{else}

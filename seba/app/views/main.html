@@ -5,6 +5,7 @@
 <title>#{get 'title' /}</title>
    #{set 'moreStyles'}
       #{stylesheet 'style.css'/} 
+      #{stylesheet 'stimenu.css'/} 
       #{stylesheet 'bootstrap.css'/} 
    #{/set} 
    #{get 'moreStyles' /} 
@@ -31,24 +32,18 @@
 </head>
 <body>
 	<div class="container">
-	#{if !designer && !company}
-		<div class="navbar clearfix" id="registrationBar">
+		<div class="navbar clearfix">
 			<div class="navbar-inner">
 				<!-- CategoryMenu -->
 				<ul class="nav nav-pills">
 					<li><a href="@{Registration.company()}">I am a <strong>Company</strong></a></li>
-					<li><a href="@{Registration.designer()}">I am a <strong>Designer</strong></a></li>
-				</ul>
+					<li><a href="@{Registration.designer()}">I am a <strong>Designer</strong></a></li></ul>
+					<ul><li id="navwrapper" class="pull-right"> #{include 'Navigation/menu.html'/} </li></ul>
+				
 			</div>
 		</div>
-	#{/if}
-		<div class="navbar">
-			<div class="navbar-inner">
-			   <div id="navwrapper">
-				#{include 'Navigation/menu.html'/}
-				</div>
-         </div>
-      </div>
+
+		
       		<div class="row">
 	<div class="span12">
 		<table width="100%" border="0" cellspacing="0" cellpadding="0">

@@ -8,7 +8,8 @@ GET     /                                       Application.index
 GET     /terms                                  Application.terms
 GET     /privacypolicy                          Application.privacypolicy
 GET     /about                                  Application.about
-GET     /faqs                                  Application.howitworks
+GET     /howitworks_forcompanies                Application.howitworks_forcompanies
+GET     /howitworks_fordesigners                Application.howitworks_fordesigners
 
 #Browse projects
 GET		/projects/list							  Projects.list

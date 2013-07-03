@@ -39,8 +39,12 @@ public static void premimumPayment(){
         render("Pages/about.html");
     }
     
-    public static void howitworks() {
-        render("Pages/faqs.html");
+    public static void howitworks_forcompanies() {
+        render("Pages/howitworks_forcompanies.html");
+    }
+    
+    public static void howitworks_fordesigners() {
+        render("Pages/howitworks_fordesigners.html");
     }
     
     @Deprecated

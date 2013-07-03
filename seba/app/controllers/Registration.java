@@ -20,10 +20,12 @@ public class Registration extends Controller {
         if(validation.hasErrors()) {
             //validation.keep();
         	render("@Registration.designer", designer);
-        }  
+        }
+        //don't know why, but this is neccessary
+        designer.isDesigner = true;
         designer.save();
         session.put("designer", designer);
-        renderTemplate("@Application.index");
+        Application.index();
 		
 	}
 	public static void saveCompany(@Valid Company company)
@@ -35,7 +37,6 @@ public class Registration extends Controller {
         }
         company.save();
         session.put("company", company);
-        renderTemplate("@Application.index");
-		
+        Application.index();
 	}
 }

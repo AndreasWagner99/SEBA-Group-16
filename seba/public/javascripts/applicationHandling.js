@@ -30,6 +30,27 @@ $(document).ready(function(){
         
         $('#applicationDialog').modal();
     });
+    
+    $('body').on("click", '.appldismiss', function(){
+        var applicationId = $(this).data("applicationid");
+        var button = $(this);
+        
+        $.post(routes.applDismissAction(),{applicationid: applicationId},function(data){
+            button.parent().parent().parent().fadeOut();
+        });
+        
+    });
+    
+    $('body').on("click", '.applaccept', function(){
+        var applicationId = $(this).data("applicationid");
+        var button = $(this);
+        
+        $.post(routes.applAcceptAction(),{applicationid: applicationId},function(data){
+            $('#applicationArea').empty();
+            //Application Object
+            $('#applicationArea').append(data);
+        });
+    });
 }
 );
 

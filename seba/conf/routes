@@ -17,6 +17,8 @@ GET		/myprojects							      Projects.myprojects
 
 #Applications
 POST     /applications                    Applications.newApplication
+POST     /applications/accept             Applications.accept
+POST     /applications/dismiss             Applications.dismiss
 
 #Post Projects
 POST     /projects                         Projects.newProject

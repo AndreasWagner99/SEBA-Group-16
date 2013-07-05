@@ -1,4 +1,4 @@
-<div class="span6">
+<div class="span5">
 <h4>${_project.title}</h4>
 #{if _mode == 'preview'}
 	<p>${_project.teaser}</p>
@@ -24,8 +24,9 @@
 	</div>
 #{/if}
 
-#{if _mode == 'full'}
+#{if _mode == 'overview'}
    <p>${_project.teaser}</p>
-   <p>${_project.description}</p>
+   <div class="pull-left"><button class="btn">Delete</button></div>
+   <div class="pull-right"><button class="btn">Edit</button></div>
 #{/if}
 </div>

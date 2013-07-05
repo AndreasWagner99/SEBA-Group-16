@@ -22,6 +22,7 @@ public class Project extends Model{
 	public String	description;
 	@ManyToOne
 	public Company	owner;
+	public boolean  isVisible;
 	
 	public Project(String title, String teaser, String description, Company owner) {
 		super();
@@ -29,5 +30,6 @@ public class Project extends Model{
 		this.teaser = teaser;
 		this.description = description;
 		this.owner = owner;
+		this.isVisible = true;
 	}
 }

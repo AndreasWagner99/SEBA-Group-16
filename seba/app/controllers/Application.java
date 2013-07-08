@@ -23,7 +23,8 @@ public static void premimumPayment(){
     	Designer d = Designer.findById(Long.valueOf(params.get("designerId")));
     	String paymentMethod = params.get("paymentMethod");
     	d.isPremium = true ;
-    	new PremiumAccount(d, cardNum, cardName, creditAmt, cvv, expirydate, paymentMethod).save();
+    	d.save();
+    	(new PremiumAccount(d, cardNum, cardName, creditAmt, cvv, expirydate, paymentMethod)).save();
     	ok();
     }
 

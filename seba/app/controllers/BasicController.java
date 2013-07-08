@@ -15,7 +15,9 @@ public class BasicController extends Controller {
             User user =  (User)User.find("byEmail", Security.connected()).first();
             if(user != null){
                 if(user.isDesigner){
-                    renderArgs.put("designer", ((Designer)(Designer.findById(user.id))));
+                    Designer d = (Designer)(Designer.findById(user.id));
+                    renderArgs.put("designer", d);
+                    renderArgs.put("isPremium", d.isPremium);
                 }
                 else{
                     Company c = Company.findById(user.id);

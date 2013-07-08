@@ -37,6 +37,7 @@ GET 	/FormAddOrEdit/designerinfo						FormAddOrEdit.designerinfo
 #Ajax-Helper
 GET  /ajax/menu                            AjaxHelper.menu
 GET  /ajax/extensions                      AjaxHelper.extensions
+GET  /ajax/info                            AjaxHelper.info
 
 # Ignore favicon requests
 GET     /favicon.ico                            404

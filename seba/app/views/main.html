@@ -2,25 +2,15 @@
 
 <html>
 <head>
-<title>#{get 'title' /}</title>
-   #{set 'moreStyles'}
-      #{stylesheet 'style.css'/} 
-      #{stylesheet 'stimenu.css'/} 
-      #{stylesheet 'bootstrap.css'/} 
-   #{/set} 
-   #{get 'moreStyles' /} 
-   
-   #{set 'moreScripts'} 
-      #{script 'jquery.min.js'/}   
-      #{script 'bootstrap.min.js'/}
-      #{script 'loginHandling.js'/}
-      #{script 'applicationHandling.js'/}
-      #{script 'projectHandling.js'/}
-      #{script 'premiumAccount.js'/}
-   #{/set} 
-   #{get 'moreScripts' /}
-   
-   <script>
+<title>#{get 'title' /}</title> #{set 'moreStyles'} #{stylesheet
+'style.css'/} #{stylesheet 'stimenu.css'/} #{stylesheet
+'bootstrap.css'/} #{/set} #{get 'moreStyles' /} #{set 'moreScripts'}
+#{script 'jquery.min.js'/} #{script 'bootstrap.min.js'/} #{script
+'loginHandling.js'/} #{script 'applicationHandling.js'/} #{script
+'projectHandling.js'/} #{script 'premiumAccount.js'/} #{/set} #{get
+'moreScripts' /}
+
+<script>
    //Mapping for JavaScript Actions
     var routes = {
         applicationAction: #{jsAction @Applications.newApplication() /},
@@ -33,51 +23,44 @@
     </script>
 </head>
 <body>
+	<div class="navbar clearfix">
+		<div class="navbar-inner">
+			<!-- CategoryMenu -->
+			<ul class="nav nav-pills">
+				<li><a href="@{Registration.company()}">I am a <strong>Company</strong></a></li>
+				<li><a href="@{Registration.designer()}">I am a <strong>Designer</strong></a></li>
+			</ul>
+			<ul>
+				<li id="navwrapper" class="pull-right">#{include
+					'Navigation/menu.html'/}</li>
+			</ul>
+
+		</div>
+		<div id="infoArea">#{include 'Extensions/infoarea.html'/}</div>
+	</div>
+
 	<div class="container">
-		<div class="navbar clearfix">
-			<div class="navbar-inner">
-				<!-- CategoryMenu -->
-				<ul class="nav nav-pills">
-					<li><a href="@{Registration.company()}">I am a <strong>Company</strong></a></li>
-					<li><a href="@{Registration.designer()}">I am a <strong>Designer</strong></a></li></ul>
-					<ul><li id="navwrapper" class="pull-right"> #{include 'Navigation/menu.html'/} </li></ul>
-				
+		<div class="row">
+			<div class="span12">
+				<table width="100%" border="0" cellspacing="0" cellpadding="0">
+					<tr>
+						<td width="47%"><img src="/public/images/main_logo.svg"
+							width="424" height="203" alt="findagui" /></td>
+						<td width="53%">
+							<div class="welcometext" style="font-size: 130%">We offer a
+								win-win platform for businesses, experienced software developers
+								and professional User Interface (UI) Designers in order to
+								engender possible collaborations and stunning web developments.</div>
+						</td>
+					</tr>
+				</table>
 			</div>
 		</div>
+		#{doLayout /}
 
-		
-      		<div class="row">
-	<div class="span12">
-		<table width="100%" border="0" cellspacing="0" cellpadding="0">
-			<tr>
-				<td width="47%"><img src="/public/images/main_logo.svg"
-					width="424" height="203" alt="findagui" /></td>
-				<td width="53%">
-					<div class="welcometext" style="font-size:130%">We offer a win-win platform for businesses, experienced software 
-					developers and professional User Interface (UI) Designers in order to engender 
-					possible collaborations and stunning web developments.</div>
-					#{if designer} 
-					<div class="premium" align="right">
-					You are not a Premium User.Please purchase Premium Account.<br />
-					$50 for 6 Months!!!<br />
-					</div>
-					#{/if}
-				</td>
-			</tr>
-		</table>
+		<div class="row" id="footer">#{include
+			'Navigation/footer.html'/}</div>
 	</div>
-</div>
-				#{doLayout /}
-
-				<div class="row" id="footer">
-					#{include 'Navigation/footer.html'/}
-					
-				</div>
-			</div>
-			<div id="extensionArea">
-			   #{include 'Extensions/extension.html'/}
-			</div>
-	
-			
+	<div id="extensionArea">#{include 'Extensions/extension.html'/}</div>
 </body>
 </html>

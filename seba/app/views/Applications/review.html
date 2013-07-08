@@ -12,12 +12,12 @@
 		   </label>
 	   #{/list}
       </div>
-      <div class="span9" id="applicationArea"></div>
+      <div class="span9" id="applicationArea"><h4>Please select one of your projects!</h4></div>
    </div>
 #{/if}
 
 #{else}
-   <div class="row content">
-      No projects listed yet.
-   </div>
+   <h4>
+      You have not created any project. <a href="#newProjectDialog" data-toggle="modal"> Create One now </a>.
+   </h4>
 #{/else}

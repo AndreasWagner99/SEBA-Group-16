@@ -1,13 +1,12 @@
 #{extends 'main.html' /}
 
 #{set title:'Available Projects' /}
-<div><br/><br/></div>
 #{if projects}
-	<div class="row content">
+	<ul class="thumbnails content">
 	#{list items:projects, as:'projectItem'}
-		#{project project:projectItem, mode:'preview'/}
+		#{project project:projectItem, mode:'preview', isPremium: isPremium/}
 	#{/list}
-	</div>
+	</ul>
 #{/if}
 
 #{else}
@@ -16,6 +15,7 @@
 	</div>
 #{/else}
 
+#{if isPremium}
 <!-- Modal Dialog for applications -->
 <div id="applicationDialog" class="modal hide fade">
 	<div class="modal-header">
@@ -39,3 +39,4 @@
 		</ul>
 	</div>
 </div>
+#{/if}

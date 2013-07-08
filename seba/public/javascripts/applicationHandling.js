@@ -36,7 +36,7 @@ $(document).ready(function(){
         var button = $(this);
         
         $.post(routes.applDismissAction(),{applicationid: applicationId},function(data){
-            var item = button.parent().parent().parent().parent(); 
+            var item = button.parents(".applicationItem"); 
             item.fadeOut();
         });
         

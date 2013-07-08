@@ -17,6 +17,11 @@ $(document).ready(function(){
                 $('#extensionArea').empty();
                 $('#extensionArea').append(data);
             });
+            //Update info-area
+            $.get('/ajax/info', function(data) {
+                $('#infoArea').empty();
+                $('#infoArea').append(data);
+            });
             //Remove registration bar
             $('#registrationBar').remove();
         })

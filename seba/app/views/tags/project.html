@@ -1,7 +1,9 @@
-<div class="span5">
+<li class="span6">
+<div class="thumbnail">
 <h4>${_project.title}</h4>
 #{if _mode == 'preview'}
 	<p>${_project.teaser}</p>
+	#{if _isPremium}
 	<p>
 	   <a href="#projectdialog${_project.id}" role="button" class="btn" data-toggle="modal">Details</a>
    </p>
@@ -17,16 +19,18 @@
 	   </div>
 	   <div class="modal-footer">
 		   <ul class="pager">
-		      <li class="previous"><a href="#">Close</a></li>
+		      <li class="previous"><a data-dismiss="modal" href="#">Close</a></li>
 	         <li class="next"><a href="#" data-project="${_project.id}" class="applyButton">Apply</a></li>
 	      </ul>
 	   </div>
 	</div>
+	#{/if}
 #{/if}
 
 #{if _mode == 'overview'}
    <p>${_project.teaser}</p>
-   <div class="pull-left"><button class="btn">Delete</button></div>
-   <div class="pull-right"><button class="btn">Edit</button></div>
+   <button class="btn">Delete</button>
+   <button class="btn">Edit</button>
 #{/if}
 </div>
+</li>

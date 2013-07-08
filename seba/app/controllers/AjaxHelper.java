@@ -18,4 +18,9 @@ public class AjaxHelper extends BasicController {
         renderTemplate("Extensions/extension.html");
         ok();
     }
+    
+    public static void info(){
+        renderTemplate("Extensions/infoarea.html");
+        ok();
+    }
 }

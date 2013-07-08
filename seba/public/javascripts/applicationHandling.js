@@ -36,7 +36,8 @@ $(document).ready(function(){
         var button = $(this);
         
         $.post(routes.applDismissAction(),{applicationid: applicationId},function(data){
-            button.parent().parent().parent().fadeOut();
+            var item = button.parent().parent().parent().parent(); 
+            item.fadeOut();
         });
         
     });
@@ -46,6 +47,7 @@ $(document).ready(function(){
         var button = $(this);
         
         $.post(routes.applAcceptAction(),{applicationid: applicationId},function(data){
+            $('.modal').modal('hide');
             $('#applicationArea').empty();
             //Application Object
             $('#applicationArea').append(data);

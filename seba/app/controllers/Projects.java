@@ -11,7 +11,7 @@ import play.mvc.With;
 public class Projects extends BasicAuthenticationController {
 
 	public static void list(){
-		List<Project> projects = Project.findAll();
+		List<Project> projects = Project.find("isVisible", true).fetch();
 		render(projects);
 	}
 	

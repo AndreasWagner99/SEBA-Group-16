@@ -2,13 +2,41 @@
    <div class="row" id="application${applItem.id}">
    <div class="span6">
 	   <h4>${applItem.designer.firstName} ${applItem.designer.lastName}</h4>
-	   <p>${applItem.explanation}</p>
+	   <div class="pull-left">
+	     <img width="150" height="100" src="@{Applications.getProposal(applItem.id)}"/>
+	   </div>
+	   <div class="clearfix" style="padding-left:170px">
+		   <p>${applItem.explanation}</p>
+		</div>
 	   #{if applItem.isAccepted}
 	     <h3>Application is accepted!</h3>
 	   #{/if}
 	   #{else}
+	   <div style="padding-top:5px">
 	     <div class="pull-left"><a class="btn appldismiss" data-applicationid="${applItem.id}">Dismiss</a></div>
-        <div class="pull-right"><a class="btn applaccept" data-applicationid="${applItem.id}">Accept</a></div>
+        <div class="pull-right"><a href="#applicationDetailDialog${applItem.id}" role="button" class="btn" data-toggle="modal">Details</a></div>
+      </div>
+      <!-- Modal Dialog for application-details -->
+		<div id="applicationDetailDialog${applItem.id}" class="modal hide fade">
+		   <div class="modal-header">
+		      <button type="button" class="close" data-dismiss="modal" aria-hidden="true">&times;</button>
+		      <h3>Application-Detail</h3>
+		   </div>
+		   <div class="modal-body">
+			   <h4>${applItem.designer.firstName} ${applItem.designer.lastName}</h4>
+		      <div class="pull-left">
+		        <img width="150" height="100" src="@{Applications.getProposal(applItem.id)}"/>
+		      </div>
+		      <div class="clearfix" style="padding-left:170px">
+		         <p>${applItem.explanation}</p>
+		      </div>
+		   </div>
+		   <div class="modal-footer">
+		      <ul class="pager">
+		         <div class="pull-right"><a class="btn applaccept" data-applicationid="${applItem.id}">Accept</a></div>
+		      </ul>
+		   </div>
+		</div>
 	   #{/else}
    </div>
    </div>

@@ -14,7 +14,7 @@ public class ApplicationsTest extends UnitTest {
         Designer designer = Designer.findById(0L);
         Project project = Project.findById(0L);
         String explanation = "Testapplication";
-        Appl s = new Appl(designer, project, explanation);
+        Appl s = new Appl(designer, project, explanation, null);
         Appl save = s.save();
         assertEquals(s, save);
     }

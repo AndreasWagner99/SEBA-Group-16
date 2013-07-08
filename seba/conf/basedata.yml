@@ -23,9 +23,11 @@ Project(MegaProject):
     teaser: Really fancy
     description: A really fancy project where you can earn lots of money!
     owner: IBM
+    isVisible: true
 
 Project(SuperProject):
     title: Super duper Project
     teaser: A project which will change the world!
     description: Build a user interface for a iron-man like super-suit.
     owner: IBM
+    isVisible: true

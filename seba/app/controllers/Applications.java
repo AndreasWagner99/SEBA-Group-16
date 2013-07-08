@@ -8,6 +8,7 @@ import models.Appl;
 import models.Company;
 import models.Designer;
 import models.Project;
+import play.db.jpa.Blob;
 import play.mvc.Controller;
 import play.mvc.With;
 import play.mvc.results.Ok;
@@ -17,10 +18,10 @@ public class Applications extends BasicAuthenticationController{
 
     public static void newApplication(){
         String projId = params.get("projId");
-        File f = params.get("file", File.class);
+        Blob b = params.get("file", Blob.class);
         Project p = Project.findById(Long.valueOf(projId));
         Designer d = (Designer) Designer.findAll().get(0);
-        Appl app = new Appl(d, p, params.get("description"));
+        Appl app = new Appl(d, p, params.get("description"), b);
         app.save();
         ok();
     }
@@ -73,4 +74,12 @@ public class Applications extends BasicAuthenticationController{
         applications.add(a);
         render("Applications/list.html",applications);
     }
+    
+    //Render proposal
+    public static void getProposal(long id) { 
+        final Appl appl = Appl.findById(id); 
+        response.setContentTypeIfNotSet(appl.proposal.type());
+        java.io.InputStream binaryData = appl.proposal.get();
+        renderBinary(binaryData);
+     }
 }

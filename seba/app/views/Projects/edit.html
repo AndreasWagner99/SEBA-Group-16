@@ -1,0 +1,57 @@
+#{extends 'main.html' /}
+
+#{set title:'Edit Project' /}
+#{if company}
+<!-- Modal Dialog for Editing Projects -->
+
+<div class="content" style="padding:25px;">
+      
+      
+  #{form @Projects.finishediting()}
+<h3>Edit Project: ${p.title}</h3>
+<fieldset>
+	#{field 'p.id'}
+				<div>
+					<label for="${field.id}">Project ID</label>
+				</div>		
+					<input type="text" readonly="readonly" id="${field.id}" class="text-input" name="${field.name}" value="${p?.id}"/>
+	#{/field}
+	
+	#{field 'p.title'}
+			<div>
+				<div>
+					<label for="${field.id}">Project Title</label>
+				</div>
+					<input type="text"  id="${field.id}" class="text-input" name="${field.name}" value="${p?.title}"/>
+					
+			</div>
+	#{/field}
+	
+	#{field 'p.teaser'}
+			<div>
+				<div>
+					<label for="${field.id}">Project Teaser</label>
+				</div>
+					<textarea id="${field.id}" rows="2" class="span7 text-input" name="${field.name}"/>${p?.teaser}</textarea>
+				
+			</div>
+	#{/field}
+	
+	#{field 'p.description'}
+			<div>
+				<div>
+					<label for="${field.id}">Project Description</label>
+				</div>
+					<textarea id="${field.id}" class="span7 text-input" rows="4" name="${field.name}"/>${p?.description}</textarea>
+				
+			</div>
+	#{/field}
+	           <br/>
+            <input type="button" class="btn" value="Finish Editing" onclick="submit();"/>
+            <a class="btn" href="@{Projects.myprojects(company.id)}">Back to Projects List </a>
+	
+     </fieldset>
+#{/form}
+      
+      </div>
+#{/if}

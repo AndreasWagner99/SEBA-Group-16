@@ -82,4 +82,5 @@ public class Applications extends BasicAuthenticationController{
         java.io.InputStream binaryData = appl.proposal.get();
         renderBinary(binaryData);
      }
+    
 }

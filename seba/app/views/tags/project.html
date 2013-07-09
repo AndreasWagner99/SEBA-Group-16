@@ -30,7 +30,8 @@
 #{if _mode == 'overview'}
    <p>${_project.teaser}</p>
    <button class="btn">Delete</button>
-   <button class="btn">Edit</button>
+  <!-- <a href="#editProjectDialog" data-toggle="modal" class="btn editproject">Edit</a> -->
+   <a href="@{Projects.edit(_project.title)}" class="btn">Edit</a>
 #{/if}
 </div>
 </li>

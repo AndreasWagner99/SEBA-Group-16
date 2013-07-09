@@ -18,10 +18,14 @@ GET		/myprojects							      Projects.myprojects
 #Applications
 POST     /applications                    Applications.newApplication
 POST     /applications/accept             Applications.accept
-POST     /applications/dismiss             Applications.dismiss
+POST     /applications/dismiss            Applications.dismiss
 
 #Post Projects
 POST     /projects                         Projects.newProject
+
+#Edit Projects
+POST     /projects/edit                    Projects.edit
+
 
 #Registration of Designer
 GET 	/Registration/designer						Registration.designer

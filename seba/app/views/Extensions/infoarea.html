@@ -3,3 +3,9 @@
 	not a Premium User. If you want to see project details and apply for
 	projects, purchase a premium account for only $50.</div>
 #{/if}
+
+#{if company && isEdited}
+<div class="alert alert-error" style="text-align: center">You have successfully edited the project. 
+<a class="btn" href="@{Projects.myprojects(company.id)}"> See changes in Projects List </a></div>
+
+#{/if}

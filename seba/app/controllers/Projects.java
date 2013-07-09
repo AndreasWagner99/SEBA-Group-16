@@ -29,7 +29,25 @@ public class Projects extends BasicAuthenticationController {
     	List<Project> projects = Project.find("byOwner", c).fetch();	
 		render(projects);
 		
-		/*List<Project> projects = Project.findAll();
-		render(projects);*/
+	}
+    
+    public static void edit(String projectTitle){
+		Project p = Project.find("byTitle", projectTitle).first();
+		render(p);
+		
+	}
+    
+    public static void finishediting(Project p)
+	{
+		Project Newp = Project.find("byID", p.id).first();		
+		Newp.title = p.title;
+		Newp.teaser = p.teaser;
+		Newp.description = p.description;
+		Newp.isVisible = true;
+		Newp.isEdited = true;
+		
+		Newp.save();
+		
+		render("@Application.index");
 	}
 }

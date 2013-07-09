@@ -1,7 +1,10 @@
 #{if designer && !isPremium}
 <div class="alert alert-error" style="text-align: center">You are
 	not a Premium User. If you want to see project details and apply for
-	projects, purchase a premium account for only $50.</div>
+	projects, purchase a premium account on monthly, half-yearly or yearly Basis </div>
+#{/if}
+#{if designer && isPremium}
+<div class="alert alert-success" style="text-align: center">Welcome!!!You are now A Premium User</div>
 #{/if}
 
 #{if company && isEdited}

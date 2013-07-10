@@ -27,8 +27,7 @@ public class Projects extends BasicAuthenticationController {
     public static void myprojects(Long companyId){
         Company c = Company.findById(companyId);
     	List<Project> projects = Project.find("byOwner", c).fetch();	
-		render(projects);
-		
+		render(projects);	
 	}
     
     public static void edit(String projectTitle){
@@ -48,6 +47,6 @@ public class Projects extends BasicAuthenticationController {
 		
 		Newp.save();
 		
-		render("@Application.index");
+		redirect("/myprojects?companyId="+Newp.owner.id);
 	}
 }

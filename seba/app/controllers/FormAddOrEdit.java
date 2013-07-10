@@ -11,10 +11,6 @@ import play.mvc.Controller;
  *
  */
 public class FormAddOrEdit extends BasicAuthenticationController {
-
-	public FormAddOrEdit() {
-		// TODO Auto-generated constructor stub
-	}
 	
 	public static void designerinfo(Designer designer)
 	{

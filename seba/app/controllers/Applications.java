@@ -20,7 +20,7 @@ public class Applications extends BasicAuthenticationController{
         String projId = params.get("projId");
         Blob b = params.get("file", Blob.class);
         Project p = Project.findById(Long.valueOf(projId));
-        Designer d = (Designer) Designer.findAll().get(0);
+        Designer d = (Designer)Designer.find("byEmail", Security.connected()).fetch().get(0);
         Appl app = new Appl(d, p, params.get("description"), b);
         app.save();
         ok();

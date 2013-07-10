@@ -21,6 +21,19 @@
         applAcceptAction: #{jsAction @Applications.accept() /}
     }
     </script>
+    
+    <script type="text/javascript">
+var SHRSB_Settings = {"shr_class":{"src":"/public/shareaholic","link":"","service":"5,7,304,88,313,52,54,2,38,309,219,74,3,40","apikey":"0747414f47c2b684cf5480c36b2478689","localize":true,"shortener":"bitly","shortener_key":"","designer_toolTips":true,"tip_bg_color":"black","tip_text_color":"white","twitter_template":"${title} - ${short_link} via @fawukenny"}};
+var SHRSB_Globals = {"perfoption":"1"};
+</script>
+<script type="text/javascript">
+(function() {
+var sb = document.createElement("script"); sb.type = "text/javascript";sb.async = true;
+sb.src = ("https:" == document.location.protocol ? "https://dtym7iokkjlif.cloudfront.net" : "http://cdn.shareaholic.com") + "/media/js/jquery.shareaholic-publishers-sb.min.js";
+var s = document.getElementsByTagName("script")[0]; s.parentNode.insertBefore(sb, s);
+})();
+</script>
+
 </head>
 <body>
 	<div class="navbar clearfix">
@@ -58,7 +71,7 @@
 		</div>
 		#{doLayout /}
 
-		<div class="row" id="footer">#{include
+		<div class="row" id="footer" style="margin: -10px -25px 0 0">#{include
 			'Navigation/footer.html'/}</div>
 	</div>
 	<div id="extensionArea">#{include 'Extensions/extension.html'/}</div>
